@@ -10,7 +10,7 @@ public class Hyrja extends Application {
   @Override
   public void start(Stage primaryStage) throws Exception {	  
    
-	Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("hyrja.fxml"));
+    Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/hyrja.fxml"));
     Scene scene = new Scene(parenti);
     primaryStage.setScene(scene);
     primaryStage.show();
