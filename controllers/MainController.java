@@ -127,3 +127,132 @@ public class MainController extends BaseController {
   @FXML
   private void onUsersNavClick(ActionEvent event) {
     try {
+ this.loadView(USER_LIST_VIEW);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @FXML
+  private void onLogoutNavClick(ActionEvent event) {
+    try {
+      Parent root = FXMLLoader.load(getClass().getResource(getViewPath("login")));
+      Scene scene = new Scene(root);
+
+      Stage primaryStage = null;
+      if (event.getSource() instanceof MenuItem) {
+        primaryStage = (Stage) statusLabel.getScene().getWindow();
+      } else {
+        primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+      }
+      primaryStage.setScene(scene);
+
+      SessionManager.user = null;
+      primaryStage.show();
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @FXML
+  private void onExitNavClick(ActionEvent event) {
+    try {
+      Stage primaryStage = (Stage) statusLabel.getScene().getWindow();
+      primaryStage.close();
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @FXML
+  private void onInsertProductClick(ActionEvent event) {
+    try {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(getClass().getResource(getViewPath(PRODUCT_DETAILS_VIEW)));
+
+      Pane pane = loader.load();
+      ProductDetailsController controller = loader.getController();
+      controller.setModel(new Product());
+      controller.setEditable(true);
+
+      this.loadView(PRODUCT_DETAILS_VIEW, pane, controller);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @FXML
+  private void onInsertUserClick(ActionEvent event) {
+    try {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(getClass().getResource(getViewPath(USER_DETAILS_VIEW)));
+
+      Pane pane = loader.load();
+      UserDetailsController controller = loader.getController();
+      controller.setModel(new User());
+
+      this.loadView(USER_DETAILS_VIEW, pane, controller);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @FXML
+  private void onAboutClick(ActionEvent event) {
+    try {
+      new AboutComponent().showDialog();
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @FXML
+  private void onChangeLangMenuItemEnClick(ActionEvent event) {
+    enCheckMenuItem.setSelected(true);
+    alCheckMenuItem.setSelected(false);
+    changeUILanguage();
+  }
+
+  @FXML
+  private void onChangeLangMenuItemAlClick(ActionEvent event) {
+    enCheckMenuItem.setSelected(false);
+    alCheckMenuItem.setSelected(true);
+    changeUILanguage();
+  }
+
+
+  private void changeUILanguage() {
+    try {
+      LangEnum lang = enCheckMenuItem.isSelected() ? LangEnum.EN : LangEnum.AL;
+      AppConfig.get().setLanguage(lang);
+      
+      ResourceBundle langBundle = getLangBundle();
+      loadLangTexts(langBundle);
+      childController.loadLangTexts(langBundle);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  private String getViewPath(String file) {
+    return VIEW_PATH + "/" + file + ".fxml";
+  }
+
+  @Override
+  public void loadLangTexts(ResourceBundle langBundle) {
+    String navLabelTxt = langBundle.getString("main_nav_label");
+    String navProductsTxt = langBundle.getString("main_nav_products");
+    String navUsersTxt = langBundle.getString("main_nav_users");
+    String navLogoutTxt = langBundle.getString("main_nav_logout");
+    String statusLabelTxt = langBundle.getString("main_status_label");
+
+    String user = SessionManager.user.getEmail();
+    String loginTime = DateHelper.toSqlFormat(SessionManager.lastLogin);
+
+    statusLabel.setText(String.format(statusLabelTxt, user, loginTime));
+    navLabel.setText(navLabelTxt);
+    navProductsButton.setText(navProductsTxt);
+    navUsersButton.setText(navUsersTxt);
+    navLogoutButton.setText(navLogoutTxt);
+  }
+}
