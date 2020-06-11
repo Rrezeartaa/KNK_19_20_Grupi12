@@ -50,3 +50,55 @@ public class LoginController extends BaseController {
       FXMLLoader loader = new FXMLLoader();
       loader.setLocation(getClass().getResource("../views/main-screen.fxml"));
       Parent root = loader.load();
+       MainController controller = loader.getController();
+      controller.loadView(MainController.PRODUCT_LIST_VIEW);
+      Scene scene = new Scene(root);
+
+      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+      primaryStage.setScene(scene);
+      primaryStage.show();
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  private User login(String email, String password) throws Exception {
+    User user = UserRepository.find(email);
+    if (user == null)
+      return null;
+    return SecurityHelper.computeHash(password, user.getSalt()).equals(user.getPassword()) ? user : null;
+  }
+
+  private User register(String email, String password) throws Exception {
+    String salt = SecurityHelper.generateSalt();
+    password = SecurityHelper.computeHash(password, salt);
+    User user = new User(-1, "Default Admin", email, password, salt, UserRole.Admin, true, null, null);
+    user = UserRepository.create(user);
+    return user;
+  }
+
+  private boolean hasUsers() throws Exception {
+    return UserRepository.count() > 0;
+  }
+
+  @Override
+  public void loadLangTexts(ResourceBundle langBundle) {
+    String emailTxt = langBundle.getString("login_email");
+    String passwordTxt = langBundle.getString("login_password");
+    String loginTxt = langBundle.getString("login_button_login");
+    String registerTxt = langBundle.getString("login_button_register");
+
+    emailField.setPromptText(emailTxt);
+    passwordField.setPromptText(passwordTxt);
+    try {
+      if (hasUsers()) {
+        loginButton.setText(loginTxt);
+      } else {
+        loginButton.setText(registerTxt);
+      }
+    } catch (Exception e) {
+      loginButton.setText(loginTxt);
+    }
+  }
+
+}
