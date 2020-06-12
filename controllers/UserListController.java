@@ -70,3 +70,41 @@ public class UserListController extends ChildController {
           ErrorPopupComponent.show(e);
         }
       });
+
+      paginationComponent.forceCursor(currPage);
+      showUsers(currPage);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  private void showUser(User user) {
+    try {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(getClass().getResource("../views/" + MainController.USER_DETAILS_VIEW + ".fxml"));
+
+      Pane pane = loader.load();
+      UserDetailsController controller = loader.getController();
+      controller.setModel(user);
+
+      parentController.loadView(MainController.USER_DETAILS_VIEW, pane, controller);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  private void changeUserState(User user) {
+    try {
+      user.setActive(!user.getActive());
+      UserRepository.update(user);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @Override
+  public void loadLangTexts(ResourceBundle langBundle) {
+    // TODO Auto-generated method stub
+
+  }
+}
