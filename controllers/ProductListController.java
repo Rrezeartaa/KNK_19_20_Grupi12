@@ -169,5 +169,51 @@ public class ProductListController extends ChildController {
       ErrorPopupComponent.show(e);
     }
   }
+  
+  @FXML
+  private void onShowAllButtonClick(ActionEvent event) {
+    try {
+      showProducts(paginationComponent.getCursor());
+      paginationPane.setVisible(true);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @FXML
+  private void onScreenKeyPressed(KeyEvent event) {
+    if (keyCtrlF.match(event)) {
+      try {
+        List<Product> products = this.findProducts();
+        tableView.getItems().clear();
+        tableView.setItems(FXCollections.observableArrayList(products));
+        paginationPane.setVisible(false);
+      } catch (Exception e) {
+        ErrorPopupComponent.show(e);
+      }
+    }
+  }
+
+  private List<Product> findProducts() throws Exception {
+    String text = new FindProductComponent().showDialog();
+    return ProductRepository.find(text);
+  }
+
+  private void showProducts(int page) throws Exception {
+    List<Product> products = ProductRepository.getAll(PAGE_SIZE, page);
+    tableView.getItems().clear();
+    tableView.setItems(FXCollections.observableArrayList(products));
+  }
+
+  private int productCount() throws Exception {
+    return ProductRepository.count();
+  }
+
+  @Override
+  public void loadLangTexts(ResourceBundle langBundle) {
+    String showAllTxt = langBundle.getString("product_list_show_all_button");
+    showAllButton.setText(showAllTxt);
+  }
+}
 
 
