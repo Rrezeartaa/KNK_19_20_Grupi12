@@ -64,4 +64,30 @@ public class UserDetailsController extends ChildController {
       viewModel.setUserRole(roleCbo.getSelectionModel().getSelectedItem());
     });
     activeChb.setOnAction(e -> {
+      viewModel.setActive(activeChb.isSelected());
+    });
+
+    createdAtField.setText(DateHelper.toSqlFormat(viewModel.getCreatedAt()));
+    updatedAtField.setText(DateHelper.toSqlFormat(viewModel.getUpdatedAt()));
+  }
+
+  @FXML
+  private void onCancelClick(ActionEvent event) {
+    try {
+      parentController.loadView(MainController.USER_LIST_VIEW);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @FXML
+  private void onSaveClick(ActionEvent event) {
+    try {
+      User model = viewModel.getModel();
+      if (!Util.isEmpty(viewModel.getPassword()) || !Util.isEmpty(viewModel.getConfirmPassword())) {
+        if (!viewModel.getPassword().equals(viewModel.getConfirmPassword()))
+          throw new Exception("Passwords don't match!");
+        if (viewModel.getPassword().length() > 4)
+          throw new Exception("Password too short!");
+      }
   
