@@ -36,6 +36,16 @@ public class UserListController extends ChildController {
           ErrorPopupComponent.show(e);
         }
       });
+        private int userCount() throws Exception {
+    return UserRepository.count();
+  }
+
+  private void showUsers(int page) throws Exception {
+    usersPane.getChildren().clear();
+    List<User> users = UserRepository.getAll(PAGE_SIZE, page);
+    UserCardComponent userCard = new UserCardComponent();
+    for (User user : users) {
+      usersPane.getChildren()
 
       showUsers(0);
     } catch (Exception e) {
