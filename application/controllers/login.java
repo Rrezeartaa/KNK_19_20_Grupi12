@@ -27,6 +27,9 @@ public class login implements Initializable {
   @FXML
   private Button loginButton;
 
+   @FXML
+  private Button signupButton;
+  
   private loginman application;
 
   @Override
@@ -51,5 +54,15 @@ public class login implements Initializable {
       alert.setContentText("Gabim! Shenoni emrin dhe password-in edhe njehere!");
       alert.showAndWait();
     }
+  }
+    @FXML
+  private void signUpButtonClick(ActionEvent event) throws Exception {
+    
+      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/signup.fxml"));
+      Scene scene = new Scene(parenti);
+      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+      primaryStage.setScene(scene);
+      primaryStage.show();
+   
   }
 }
