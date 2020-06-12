@@ -29,3 +29,39 @@ public class UserDetailsController extends ChildController {
   private TextField emailField;
   @FXML
   private PasswordField passwordField;
+@FXML
+  private PasswordField confirmPasswordField;
+  @FXML
+  private ChoiceBox<String> roleCbo;
+  @FXML
+  private CheckBox activeChb;
+  @FXML
+  private TextField createdAtField;
+  @FXML
+  private TextField updatedAtField;
+
+  @Override
+  public void initialize(URL url, ResourceBundle bundle) {
+    super.initialize(url, bundle);
+    roleCbo.getItems().addAll("Admin", "Employee");
+  }
+
+  public void setModel(User model) {
+    originalModel = model;
+    viewModel = new UserViewModel(model);
+
+    idField.setText(Integer.toString(viewModel.getId()));
+    nameField.setText(viewModel.getName());
+    emailField.setText(viewModel.getEmail());
+    roleCbo.getSelectionModel().select(viewModel.getUserRole() == UserRole.Admin ? "Admin" : "Employee");
+    activeChb.setSelected(viewModel.getActive());
+
+    nameField.textProperty().bindBidirectional(viewModel.nameProperty());
+    emailField.textProperty().bindBidirectional(viewModel.emailProperty());
+    passwordField.textProperty().bindBidirectional(viewModel.passwordProperty());
+    confirmPasswordField.textProperty().bindBidirectional(viewModel.confirmPasswordProperty());
+    roleCbo.setOnAction(e -> {
+      viewModel.setUserRole(roleCbo.getSelectionModel().getSelectedItem());
+    });
+    activeChb.setOnAction(e -> {
+  
