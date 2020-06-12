@@ -52,3 +52,21 @@ public class UserListController extends ChildController {
       ErrorPopupComponent.show(e);
     }
   }
+      
+          .add(userCard.getContent(user, e -> showUser(user), e -> removeUser(user), e -> changeUserState(user)));
+    }
+  }
+
+  private void removeUser(User user) {
+    try {
+      UserRepository.remove(user.getId());
+
+      int currPage = paginationComponent.getCursor();
+      paginationComponent = new PaginationComponent(userCount(), PAGE_SIZE);
+      paginationComponent.render(paginationPane, (page) -> {
+        try {
+          showUsers(page);
+        } catch (Exception e) {
+          ErrorPopupComponent.show(e);
+        }
+      });
