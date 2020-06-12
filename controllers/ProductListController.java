@@ -105,4 +105,29 @@ public class ProductListController extends ChildController {
   }
 
   @FXML
+  private void onEditMenuItemClick(ActionEvent event) {
+    Product selected = tableView.getSelectionModel().getSelectedItem();
+    if (selected == null)
+      return;
+
+    try {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(getClass().getResource("../views/" + MainController.PRODUCT_DETAILS_VIEW + ".fxml"));
+
+      Pane pane = loader.load();
+      ProductDetailsController controller = loader.getController();
+      controller.setModel(selected);
+      controller.setEditable(true);
+
+      parentController.loadView(MainController.PRODUCT_DETAILS_VIEW, pane, controller);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @FXML
+  private void onRemoveMenuItemClick(ActionEvent event) {
+
+  }
+
 
