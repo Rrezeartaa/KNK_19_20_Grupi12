@@ -90,4 +90,42 @@ public class UserDetailsController extends ChildController {
         if (viewModel.getPassword().length() > 4)
           throw new Exception("Password too short!");
       }
-  
+     if (model.getId() > 0) {
+        // update
+        if (Util.isEmpty(viewModel.getPassword())) {
+          model.setPassword(originalModel.getPassword());
+          model.setSalt(originalModel.getSalt());
+        } else {
+          String salt = SecurityHelper.generateSalt();
+          String pwdHash = SecurityHelper.computeHash(viewModel.getPassword(), salt);
+          model.setPassword(pwdHash);
+          model.setSalt(salt);
+        }
+
+        UserRepository.update(model);
+      } else {
+        // create
+        if (Util.isEmpty(viewModel.getPassword())) {
+          throw new Exception("Password is required for the user!");
+        }
+
+        String salt = SecurityHelper.generateSalt();
+        String pwdHash = SecurityHelper.computeHash(viewModel.getPassword(), salt);
+        model.setPassword(pwdHash);
+        model.setSalt(salt);
+
+        UserRepository.create(model);
+      }
+
+      parentController.loadView(MainController.USER_LIST_VIEW);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @Override
+  public void loadLangTexts(ResourceBundle langBundle) {
+    // TODO Auto-generated method stub
+
+  }
+}
