@@ -57,4 +57,52 @@ public class ProductListController extends ChildController {
   private MenuItem editMenuItem;
   @FXML
   private MenuItem removeMenuItem;
+    @Override
+  public void initialize(URL url, ResourceBundle bundle) {
+    super.initialize(url, bundle);
+
+    try {
+      idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
+      titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+      priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
+      qtyColumn.setCellValueFactory(new PropertyValueFactory<>("qty"));
+
+      tableView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+      showProducts(0);
+
+      paginationComponent = new PaginationComponent(productCount(), PAGE_SIZE);
+      paginationComponent.render(paginationPane, (page) -> {
+        try {
+          showProducts(page);
+        } catch (Exception e) {
+          ErrorPopupComponent.show(e);
+        }
+      });
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @FXML
+  private void onViewMenuItemClick(ActionEvent event) {
+    Product selected = tableView.getSelectionModel().getSelectedItem();
+    if (selected == null)
+      return;
+
+    try {
+      FXMLLoader loader = new FXMLLoader();
+      loader.setLocation(getClass().getResource("../views/" + MainController.PRODUCT_DETAILS_VIEW + ".fxml"));
+
+      Pane pane = loader.load();
+      ProductDetailsController controller = loader.getController();
+      controller.setModel(selected);
+      controller.setEditable(false);
+
+      parentController.loadView(MainController.PRODUCT_DETAILS_VIEW, pane, controller);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
+
+  @FXML
 
