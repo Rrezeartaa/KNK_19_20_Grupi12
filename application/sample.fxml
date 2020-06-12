@@ -35,6 +35,31 @@ package application;
                <children>
                   <Button id="button" contentDisplay="TOP" mnemonicParsing="false" prefHeight="135.0" prefWidth="264.0" stylesheets="@stili.css" text="Button" textFill="#573bb8" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <graphic>
+                         <ImageView fitHeight="78.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@home.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="button" contentDisplay="TOP" mnemonicParsing="false" prefHeight="135.0" prefWidth="264.0" stylesheets="@stili.css" text="Setting" textFill="#573bb8" GridPane.columnIndex="1">
+                     <graphic>
+                        <ImageView fitHeight="75.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@proces.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button id="button" contentDisplay="TOP" mnemonicParsing="false" prefHeight="135.0" prefWidth="264.0" stylesheets="@stili.css" text="Menu" textFill="#573bb8" GridPane.rowIndex="1">
+                     <graphic>
+                        <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@setting.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button id="button" contentDisplay="TOP" mnemonicParsing="false" prefHeight="135.0" prefWidth="264.0" stylesheets="@stili.css" text="Button" textFill="#573bb8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <graphic>
                         <ImageView fitHeight="82.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@airplane_icon.png" />
