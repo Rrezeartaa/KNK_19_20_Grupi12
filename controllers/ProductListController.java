@@ -129,5 +129,45 @@ public class ProductListController extends ChildController {
   private void onRemoveMenuItemClick(ActionEvent event) {
 
   }
+  
+  
+  @FXML
+  private void onContextMenuShowing(WindowEvent event) {
+    int selected = tableView.getSelectionModel().getSelectedItems().size();
+    if (selected == 1) {
+      viewMenuItem.setDisable(false);
+      editMenuItem.setDisable(false);
+      removeMenuItem.setDisable(false);
+    } else if (selected > 1) {
+      viewMenuItem.setDisable(true);
+      editMenuItem.setDisable(true);
+      removeMenuItem.setDisable(false);
+    } else {
+      viewMenuItem.setDisable(true);
+      editMenuItem.setDisable(true);
+      removeMenuItem.setDisable(true);
+    }
+  }
+
+  @FXML
+  private void onMultipleButtonClick(ActionEvent event) {
+    if (multipleButton.isSelected()) {
+      tableView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+    } else {
+      tableView.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+    }
+  }
+
+  @FXML
+  private void onFindButtonClick(ActionEvent event) {
+    try {
+      List<Product> products = this.findProducts();
+      tableView.getItems().clear();
+      tableView.setItems(FXCollections.observableArrayList(products));
+      paginationPane.setVisible(false);
+    } catch (Exception e) {
+      ErrorPopupComponent.show(e);
+    }
+  }
 
 
