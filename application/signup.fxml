@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="499.0" stylesheets="@pro.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="499.0" stylesheets="@pro.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.login">
    <children>
       <GridPane hgap="30.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="365.0" prefWidth="426.0" vgap="15.0">
         <columnConstraints>
@@ -66,18 +66,18 @@
                   <Insets left="80.0" />
                </GridPane.margin>
             </Text>
-            <TextField GridPane.columnIndex="1" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField GridPane.columnIndex="1" id="emri" fx:id="emri"/>
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="1" id="mbiemri" fx:id="mbiemri" />
             <RadioButton mnemonicParsing="false" prefHeight="19.0" prefWidth="91.0" text="Mashkull" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <RadioButton mnemonicParsing="false" prefHeight="19.0" prefWidth="79.0" text="Femer" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
                   <Insets left="100.0" />
                </GridPane.margin>
             </RadioButton>
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" text="Sign up" GridPane.columnIndex="1" GridPane.rowIndex="7">
+            <TextField GridPane.columnIndex="1" GridPane.rowIndex="4" id="email" fx:id="email"/>
+            <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="5" id="pass" fx:id="pass"/>
+            <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="6" id="confpass" fx:id="confpass"/>
+            <Button id="signButton" fx:id="signButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" onAction="#signUpiButtonClick" text="Sign up" GridPane.columnIndex="1" GridPane.rowIndex="7">
                <GridPane.margin>
                   <Insets left="100.0" />
                </GridPane.margin>
