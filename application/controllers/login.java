@@ -20,16 +20,24 @@ import javafx.stage.Stage;
 public class login implements Initializable {
   @FXML
   private TextField usernameField;
-
   @FXML
   private PasswordField passwordField;
-
   @FXML
   private Button loginButton;
-
-   @FXML
+  @FXML
   private Button signupButton;
-  
+  @FXML
+  private TextField emri;
+  @FXML
+  private TextField mbiemri;
+  @FXML 
+  private PasswordField pass;
+  @FXML
+  private PasswordField confpass;
+  @FXML
+  private TextField email;
+  @FXML
+  private Button signButton;
   private loginman application;
 
   @Override
@@ -39,7 +47,10 @@ public class login implements Initializable {
 
   private boolean login(String username, String password) {
     return application.find(username, password) != null;
-  }
+  }//kjo lidhet me metoden find te klasa loginman e rregulloni me databaze 
+   private boolean logini(String username, String password) {
+	    return application.find(username, password) != null;
+	  }//kjo lidhet me metoden find te klasa loginman e rregulloni me databaze 
 
   @FXML
   private void loginButtonClick(ActionEvent event) throws Exception {
@@ -62,7 +73,21 @@ public class login implements Initializable {
       Scene scene = new Scene(parenti);
       Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
       primaryStage.setScene(scene);
-      primaryStage.show();
-   
+      primaryStage.show();  
+  }
+ @FXML
+  private void signUpiButtonClick(ActionEvent event) throws Exception {
+	  if (logini(emri.getText(), pass.getText())) {	  
+		  Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/hyrja.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();		  		 
+     }	 
+	  else {
+		  Alert alert = new Alert(AlertType.ERROR);
+	      alert.setContentText("Gabim! Ju lutem shenoni te gjitha te dhenat!");
+	      alert.showAndWait();
+	  }
   }
 }
