@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="697.0" style="-fx-background-color: #F8F8F8;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField prefHeight="40.0" prefWidth="497.0" style="-fx-alignment: center;" text="Contact details:">
+         <HBox.margin>
+            <Insets left="100.0" right="100.0" top="50.0" />
+         </HBox.margin>
+         <font>
+            <Font name="Arial" size="25.0" />
+         </font>
+      </TextField>
+   </children>
+</HBox>
