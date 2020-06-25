@@ -1,5 +1,5 @@
 .root {
-  -fx-background-image: url(hej.jpg);
+  -fx-background-image: url(photos/hej.jpg);
   -fx-background-repeat: no-repeat;
   -fx-background-size: cover;
 }
