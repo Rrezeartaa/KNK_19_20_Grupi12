@@ -38,7 +38,7 @@
                   <Insets left="20.0" />
                </GridPane.margin>
                <image>
-                  <Image url="@../../../../Desktop/p6.png" />
+                  <Image url="@/application/stilet/photos/phone_ic.png" />
                </image>
             </ImageView>
             <ImageView fitHeight="163.0" fitWidth="246.0" pickOnBounds="true" preserveRatio="true">
@@ -46,7 +46,7 @@
                   <Insets bottom="230.0" left="90.0" />
                </GridPane.margin>
                <image>
-                  <Image url="@../../../../Desktop/p1.jpg" />
+                  <Image url="@/application/stilet/photos/p1.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="30.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
@@ -54,7 +54,7 @@
                   <Insets left="20.0" />
                </GridPane.margin>
                <image>
-                  <Image url="@../../../../Desktop/p2.png" />
+                  <Image url="@/application/stilet/photos/mail_ic.png" />
                </image>
             </ImageView>
             <Label prefHeight="17.0" prefWidth="411.0" style="-fx-alignment: center; -fx-border-color: #E0E0E0;" text="Zahir Maliqi" GridPane.rowIndex="1">
