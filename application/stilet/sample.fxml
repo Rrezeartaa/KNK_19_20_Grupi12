@@ -14,7 +14,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.info">
    <children>
-      <Pane layoutX="-6.0" layoutY="-6.0" prefHeight="147.0" prefWidth="894.0" style="-fx-background-color: #00bfff;" AnchorPane.bottomAnchor="444.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-6.0">
+     <Pane layoutX="-6.0" layoutY="-6.0" prefHeight="147.0" prefWidth="894.0" style="-fx-background-color: #00bfff;" AnchorPane.bottomAnchor="444.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-6.0">
          <children>
             <Label layoutX="48.0" layoutY="94.0" prefHeight="49.0" prefWidth="116.0" text="MIDWEST" textFill="WHITE">
                <font>
@@ -39,7 +39,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button id="button" contentDisplay="TOP" mnemonicParsing="false" prefHeight="135.0" prefWidth="264.0" stylesheets="@stili.css" text="Button" textFill="#573bb8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button id="button" contentDisplay="TOP" mnemonicParsing="false" prefHeight="135.0" prefWidth="264.0" stylesheets="@../stilet/stili.css" text="Button" textFill="#573bb8" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <graphic>
                          <ImageView fitHeight="78.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -47,39 +47,39 @@
                            </image></ImageView>
                      </graphic>
                   </Button>
-                  <Button id="button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="145.0" prefWidth="270.0" stylesheets="@stili.css" text="Setting" textFill="#573bb8" GridPane.columnIndex="1">
+                  <Button id="button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="145.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="Setting" textFill="#573bb8" GridPane.columnIndex="1">
                      <graphic>
                         <ImageView fitHeight="75.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@proces.png" />
+                              <Image url="@/application/stilet/photos/proces.png" />
                            </image>
                         </ImageView>
                      </graphic>
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin></Button>
-                  <Button id="button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="153.0" prefWidth="273.0" stylesheets="@stili.css" text="Menu" textFill="#573bb8" GridPane.rowIndex="1">
+                  <Button id="button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="153.0" prefWidth="273.0" stylesheets="@../stilet/stili.css" text="Menu" textFill="#573bb8" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@setting.png" />
+                              <Image url="@/application/stilet/photos/setting.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button id="button" onAction="#img1" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="151.0" prefWidth="270.0" stylesheets="@stili.css" text="Button" textFill="#573bb8" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button id="button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#img1" prefHeight="151.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="Button" textFill="#573bb8" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fitHeight="82.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@airplane_icon.png" />
+                              <Image url="@/application/stilet/photos/airplane_icon.png" />
                            </image>
                         </ImageView>
                      </graphic>
                   </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="144.0" prefWidth="284.0" stylesheets="@stili.css" />
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="144.0" prefWidth="284.0" stylesheets="@../stilet/stili.css" />
                   <ImageView fitHeight="90.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@home.png" />
+                        <Image url="@/application/stilet/photos/home.png" />
                      </image>
                      <GridPane.margin>
                         <Insets left="90.0" />
