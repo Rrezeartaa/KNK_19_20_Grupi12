@@ -1,0 +1,31 @@
+package application.controllers;
+import java.net.URL;
+import java.util.ResourceBundle;
+import application.loginman;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
+
+public class info {	
+	  @FXML
+	  private void img1(ActionEvent event) throws Exception {
+	    
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/info.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	    
+	  }
+
+}
