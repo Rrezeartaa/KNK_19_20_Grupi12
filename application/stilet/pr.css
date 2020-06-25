@@ -1,5 +1,5 @@
 .root {
-  -fx-background-image: url(plan.jpg);
+  -fx-background-image: url(photos/plan.jpg);
   -fx-background-repeat: no-repeat;
   -fx-background-size: cover;
 }
