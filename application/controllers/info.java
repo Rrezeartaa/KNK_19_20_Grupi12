@@ -27,5 +27,15 @@ public class info {
 	      primaryStage.show();
 	    
 	  }
+	 @FXML
+	  private void img(ActionEvent event) throws Exception {
+	    
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/img.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	    
+	  }
 
 }
