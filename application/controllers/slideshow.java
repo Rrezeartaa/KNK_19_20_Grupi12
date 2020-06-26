@@ -18,20 +18,20 @@ public class slideshow implements Initializable {
     
     public void slideshow(){
         ArrayList<Image> images=new ArrayList<Image>();
+        images.add(new Image("application/stilet/photos/welcome_photo.jpg"));
+        images.add(new Image("application/stilet/photos/air_pic.jpg"));
         images.add(new Image("application/stilet/photos/a2.jpg"));
         images.add(new Image("application/stilet/photos/a3.jpg"));
         images.add(new Image("application/stilet/photos/a4.jpg"));
         images.add(new Image("application/stilet/photos/a1.jpg"));
         
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5),event->{
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(3),event->{
             imageView.setImage(images.get(count));
             count++;
-            if(count == 4)
+            if(count == 6)
                 count = 0;
 
         }));
-    
- 
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
     }
