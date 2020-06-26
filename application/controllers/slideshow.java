@@ -22,6 +22,14 @@ public class Controller implements Initializable {
         images.add(new Image("/b3.jpg"));
         images.add(new Image("/b4.jpg"));
         images.add(new Image("/b1.jpg"));
+        
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5),event->{
+            imageView.setImage(images.get(count));
+            count++;
+            if(count == 4)
+                count = 0;
+
+        }));
     
     
   
