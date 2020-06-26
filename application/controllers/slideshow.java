@@ -35,3 +35,10 @@ public class Controller implements Initializable {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
     }
+    
+     @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        slideshow();
+    }
+}
+
