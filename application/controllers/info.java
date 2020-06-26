@@ -30,7 +30,17 @@ public class info {
 	 @FXML
 	  private void img(ActionEvent event) throws Exception {
 	    
-	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/img.fxml"));
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/s1.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	    
+	  }
+	 @FXML
+	  private void s2(ActionEvent event) throws Exception {
+	    
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/s2.fxml"));
 	      Scene scene = new Scene(parenti);
 	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	      primaryStage.setScene(scene);
