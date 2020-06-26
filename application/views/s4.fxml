@@ -49,6 +49,60 @@
                   <Image url="@../../../../Desktop/w9.jpg" />
                </image>
             </ImageView>
+             <ImageView fitHeight="30.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="20.0" />
+               </GridPane.margin>
+               <image>
+                  <Image url="@../../../../Desktop/p2.png" />
+               </image>
+            </ImageView>
+            <Label prefHeight="17.0" prefWidth="411.0" style="-fx-alignment: center; -fx-border-color: #E0E0E0;" text="Natyra Vitija" GridPane.rowIndex="1">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label prefHeight="20.0" prefWidth="394.0" style="-fx-alignment: center; -fx-border-color: #E0E0E0;" text="Complaints Handling" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="22.0" prefWidth="404.0" style="-fx-alignment: center; -fx-border-color: #E0E0E0;" text=" Office: +383(0)385015021041" GridPane.rowIndex="3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </GridPane.margin>
+            </Label>
+            <Label prefHeight="17.0" prefWidth="398.0" style="-fx-alignment: center; -fx-border-color: #E0E0E0;" text="complaints@limakkosovo.aero" GridPane.rowIndex="4">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+         <BorderPane.margin>
+            <Insets top="135.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+   <top>
+      <Label prefHeight="37.0" prefWidth="431.0" style="-fx-alignment: center; -fx-border-color: #E0E0E0; -fx-background-color: white;" text="Contact details:" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="24.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
            
       </Label>
    </top>
