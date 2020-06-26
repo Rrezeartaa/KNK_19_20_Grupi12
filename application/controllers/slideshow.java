@@ -31,6 +31,7 @@ public class Controller implements Initializable {
 
         }));
     
-    
-  
-}
+ 
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
+    }
