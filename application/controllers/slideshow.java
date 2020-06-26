@@ -1,4 +1,4 @@
-package sample;
+package application.controllers;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -12,7 +12,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable {
+public class slideshow implements Initializable {
     @FXML ImageView imageView;
     int count;
     
