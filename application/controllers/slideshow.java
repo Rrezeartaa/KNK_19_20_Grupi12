@@ -11,3 +11,9 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+public class Controller implements Initializable {
+    @FXML ImageView imageView;
+    int count;
+  
+}
