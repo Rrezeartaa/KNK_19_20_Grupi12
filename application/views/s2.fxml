@@ -46,7 +46,7 @@
                   <Insets bottom="230.0" left="100.0" />
                </GridPane.margin>
                <image>
-                  <Image url="@/application/stilet/photos/p2.png" />
+                  <Image url="@/application/stilet/photos/p2.jpg" />
                </image>
             </ImageView>
             <ImageView fitHeight="30.0" fitWidth="47.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="4">
