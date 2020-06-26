@@ -47,6 +47,26 @@ public class info {
 	      primaryStage.show();
 	    
 	  }
+	 @FXML
+	  private void s3(ActionEvent event) throws Exception {
+	    
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/s3.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	    
+	  }
+	  @FXML
+	  private void s4(ActionEvent event) throws Exception {
+	    
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/s4.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	    
+	  }
         @FXML
 	  private void imggg(ActionEvent event){
 	    
