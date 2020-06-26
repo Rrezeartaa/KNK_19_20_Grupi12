@@ -18,10 +18,10 @@ public class Controller implements Initializable {
     
     public void slideshow(){
         ArrayList<Image> images=new ArrayList<Image>();
-        images.add(new Image("/b2.jpg"));
-        images.add(new Image("/b3.jpg"));
-        images.add(new Image("/b4.jpg"));
-        images.add(new Image("/b1.jpg"));
+        images.add(new Image("/a2.jpg"));
+        images.add(new Image("/a3.jpg"));
+        images.add(new Image("/a4.jpg"));
+        images.add(new Image("/a1.jpg"));
         
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5),event->{
             imageView.setImage(images.get(count));
