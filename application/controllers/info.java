@@ -47,5 +47,14 @@ public class info {
 	      primaryStage.show();
 	    
 	  }
-
+        @FXML
+	  private void imggg(ActionEvent event){
+	    
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/slideshow.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	    
+	  }
 }
