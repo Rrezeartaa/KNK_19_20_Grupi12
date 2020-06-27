@@ -111,7 +111,7 @@
                      <children>
                         <ImageView fitHeight="700.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@prishtina.png" />
+                              <Image url="@/application/stilet/photos/air_location.png" />
                            </image>
                         </ImageView>
                         <VBox prefHeight="200.0" prefWidth="100.0" />
