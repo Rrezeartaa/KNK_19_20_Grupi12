@@ -48,5 +48,79 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
+                      <VBox.margin>
+                        <Insets top="100.0" />
+                     </VBox.margin>
+                     <children>
+                        <Label prefHeight="36.0" prefWidth="412.0" style="-fx-alignment: center; -fx-border-color: #00bfff; -fx-background-color: white;" text="Address:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="36.0" prefWidth="412.0" style="-fx-alignment: center; -fx-border-color: #00bfff; -fx-background-color: white;" text="   Pristina International Airport 'Adem Jashari'" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="36.0" prefWidth="412.0" style="-fx-alignment: center; -fx-border-color: #00bfff; -fx-background-color: white;" text="Limak Kosovo International Airport" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="36.0" prefWidth="412.0" style="-fx-alignment: center; -fx-border-color: #00bfff; -fx-background-color: white;" text="Vrellë, Lipjan" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="36.0" prefWidth="412.0" style="-fx-alignment: center; -fx-border-color: #00bfff; -fx-background-color: white;" text="10070" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <Label prefHeight="36.0" prefWidth="412.0" style="-fx-alignment: center; -fx-border-color: #00bfff; -fx-background-color: white;" text="Republic of Kosovo" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </GridPane.margin>
+                        </Label>
+                     </children>
+                  </GridPane>
+               </children>
+            </VBox>
+            <ListView prefHeight="550.0" prefWidth="659.0" />
+            <ScrollPane prefHeight="200.0" prefWidth="200.0">
+               <content>
+                  <Pane>
+                     <children>
+                        <ImageView fitHeight="700.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@prishtina.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                     </children>
+                  </Pane>
+               </content>
+            </ScrollPane>
+         </items>
+      </SplitPane>
+   </children>
                     
 </VBox>
