@@ -19,7 +19,7 @@
    <center>
       <AnchorPane prefHeight="680.0" prefWidth="1350.0" stylesheets="@application.css" BorderPane.alignment="CENTER">
          <children>
-            <TreeTableView layoutX="14.0" layoutY="14.0" prefHeight="680.0" prefWidth="955.0" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <TreeTableView layoutX="14.0" layoutY="14.0" prefHeight="680.0" prefWidth="955.0" stylesheets="@../stilet/application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
                 <TreeTableColumn prefWidth="75.0" text="NAME" />
                 <TreeTableColumn prefWidth="75.0" text="JOB" />
