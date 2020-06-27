@@ -1,0 +1,5 @@
+#root {
+  -fx-background-image: url(photos/book.png);
+  -fx-background-repeat: no-repeat;
+  -fx-background-size: cover;
+}
