@@ -1,6 +1,8 @@
 package application.controllers;
 
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
 import application.loginman;
 import javafx.event.ActionEvent;
@@ -16,6 +18,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
+import application.databaza.DbConnection;
 
 public class login implements Initializable {
   @FXML
@@ -39,6 +42,15 @@ public class login implements Initializable {
   @FXML
   private Button signButton;
   private loginman application;
+  
+  
+  PreparedStatement preparedStatement;
+  Connection connection;
+
+  public public login(){
+      connection = (Connection) DbConnection.getConnection();
+  }
+  
 
   @Override
   public void initialize(URL arg0, ResourceBundle arg1) {
