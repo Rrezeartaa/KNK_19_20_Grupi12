@@ -23,7 +23,7 @@
             </Label>
             <ImageView fitHeight="145.0" fitWidth="290.0" layoutX="24.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@prishtina_logo.png" />
+                  <Image url="@/application/stilet/photos/prishtina_logo.png" />
                </image>
             </ImageView>
          </children></Pane>
@@ -49,7 +49,7 @@
                   <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="144.0" prefWidth="284.0" stylesheets="@../stilet/stili.css" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
                   <ImageView fitHeight="90.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <image>
-                        <Image url="@home.png" />
+                        <Image url="@/application/stilet/photos/home.png" />
                      </image>
                      <GridPane.margin>
                         <Insets left="100.0" />
@@ -57,7 +57,7 @@
                   </ImageView>
                   <ImageView fitHeight="75.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <image>
-                        <Image url="@proces.png" />
+                        <Image url="@/application/stilet/photos/proces.png" />
                      </image>
                      <GridPane.margin>
                         <Insets left="370.0" />
@@ -65,7 +65,7 @@
                   </ImageView>
                   <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                      <image>
-                        <Image url="@setting.png" />
+                        <Image url="@/application/stilet/photos/setting.png" />
                      </image>
                      <GridPane.margin>
                         <Insets left="100.0" />
@@ -73,7 +73,7 @@
                   </ImageView>
                   <ImageView fitHeight="82.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                      <image>
-                        <Image url="@airplane_icon.png" />
+                        <Image url="@/application/stilet/photos/airplane_icon.png" />
                      </image>
                      <GridPane.margin>
                         <Insets left="370.0" />
