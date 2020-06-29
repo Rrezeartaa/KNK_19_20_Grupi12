@@ -25,4 +25,18 @@ public class JavaFXTableViewAddRows extends Application {
     
     
     
+       scene.getStylesheets().add("src/newCascadeStyleSheet.css");       
+        stage.setScene(scene);
+        stage.show();
+    }
+    public static void main(String[] args) {
+        launch(args);
+    }
+    }
+
+
+
+    
+    
+    
     
