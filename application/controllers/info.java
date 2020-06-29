@@ -1,7 +1,17 @@
 package application.controllers;
+
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,15 +20,140 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TextField;
 
 import javafx.geometry.Pos;
 
-public class info {	
+public class info implements Initializable{	
 	@FXML
 	ImageView imgi=new ImageView();
 	@FXML
 	VBox box=new VBox();
 	@FXML
+	
+	@FXML
+    private TextField txtDestinacion1;
+
+    @FXML
+    private DatePicker txtDataNisjes1;
+
+    @FXML
+    private Button btnRezervo1;
+
+    @FXML
+    private TextField txtEmri1;
+
+    @FXML
+    private Tab txtEmri2;
+
+    @FXML
+    private TextField txtDestinacioni2;
+
+    @FXML
+    private DatePicker txtDataNisjes2;
+
+    @FXML
+    private DatePicker txtDataKthimit2;
+
+    @FXML
+    private Button btnRezervo2;
+    
+    ResultSet resultset;
+    PreparedStatement preparedStatement;
+    Connection connection;
+  	private static Connection dbConnection;
+
+  	private final static String host = "localhost";
+  	private final static String dbName = "aeroporti";
+  	private final static String username = "root";
+  	private final static String password = "";
+
+  	public static Connection getConnection() {
+  		if (dbConnection == null) {
+  			try {
+  				Class.forName("com.mysql.cj.jdbc.Driver");
+  				//Class.forName("org.sqlite.JDBC");
+  				dbConnection = DriverManager.getConnection(
+  						"jdbc:mysql://" + host + "/" + dbName + "?useSSL=false&allowPublicKeyRetrieval=true", username,
+  						password);
+  			} catch (Exception ex) {
+  				ex.printStackTrace();
+  			}
+  		}
+  		return dbConnection;
+  	}
+  	
+  	public public info() {
+  		connection =getConnection();
+	}
+    
+    @Override
+    public void initialize(URL arg0, ResourceBundle arg1) {
+    }
+
+    @FXML
+    void home(ActionEvent event) {
+
+    }
+
+    @FXML
+    void rezervoButtonAction1(ActionEvent event) {
+    	insertData1();
+    }
+
+    @FXML
+    void rezervoButtonAction2(ActionEvent event) {
+    	insertData2();  	
+    }
+
+    
+    private void insertData1() {
+
+		try {
+
+			String query = "INSERT INTO rezervimet (emri_klientit, destinacioni, data_nisjes) VALUES (?,?,?)";
+
+			preparedStatement = (PreparedStatement) connection.prepareStatement(query);
+			
+			preparedStatement.setString(1, txtEmri1.getText());
+			preparedStatement.setString(2, txtDestinacion1.getText());
+			preparedStatement.setString(3, txtDataNisjes1.getValue().toString());
+			
+			preparedStatement.executeUpdate();
+			System.out.println("Te dhenat u insertuan me sukses ne databaze...");
+
+		} catch (SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+	}
+    
+    
+    private void insertData2() {
+
+		try {
+
+			String query = "INSERT INTO rezervimet (emri_klientit, destinacioni, data_nisjes, data_kthimit) VALUES (?,?,?,?)";
+
+			preparedStatement = (PreparedStatement) connection.prepareStatement(query);
+			
+			preparedStatement.setString(1, txtEmri2.getText());
+			preparedStatement.setString(2, txtDestinacioni2.getText());
+			preparedStatement.setString(3, txtDataNisjes2.getValue().toString());
+			preparedStatement.setString(4, txtDataKthimit2.getValue().toString());
+			
+			preparedStatement.executeUpdate();
+			System.out.println("Te dhenat u insertuan me sukses ne databaze.");
+
+		} catch (SQLException ex) {
+			System.out.println(ex.getMessage());
+		}
+	}
+    
+    
+	
 	  private VBox contentPane=new VBox();
 	private BaseController childController;
 	public void loadView(String screen) throws Exception {
