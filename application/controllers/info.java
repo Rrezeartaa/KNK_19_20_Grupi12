@@ -94,10 +94,14 @@ public class info implements Initializable{
     }
 
     @FXML
-    void home(ActionEvent event) {
-
-    }
-
+	  private void home(ActionEvent event) throws Exception {
+	Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/sample.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	    
+	  }
     @FXML
     void rezervoButtonAction1(ActionEvent event) {
     	insertData1();
