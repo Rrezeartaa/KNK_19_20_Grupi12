@@ -126,7 +126,9 @@ public class info implements Initializable{
 			preparedStatement.setString(3, txtDataNisjes1.getValue().toString());
 			
 			preparedStatement.executeUpdate();
-			System.out.println("Te dhenat u insertuan me sukses ne databaze...");
+			 Alert alert = new Alert(AlertType.INFORMATION);
+		      alert.setContentText("Rekordet tuaja u regjistruan me sukses!");
+		      alert.showAndWait();
 
 		} catch (SQLException ex) {
 			System.out.println(ex.getMessage());
@@ -148,7 +150,9 @@ public class info implements Initializable{
 			preparedStatement.setString(4, txtDataKthimit2.getValue().toString());
 			
 			preparedStatement.executeUpdate();
-			System.out.println("Te dhenat u insertuan me sukses ne databaze.");
+			 Alert alert = new Alert(AlertType.INFORMATION);
+		      alert.setContentText("Rekordet tuaja u regjistruan me sukses!");
+		      alert.showAndWait();
 
 		} catch (SQLException ex) {
 			System.out.println(ex.getMessage());
