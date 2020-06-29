@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="501.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="src.FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="501.0" prefWidth="725.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.FXMLDocumentController">
     <children>
           
         <Label fx:id="label" layoutX="126" layoutY="120" minHeight="16" minWidth="69" />
@@ -36,7 +36,7 @@
         
          <Pane layoutY="2.0" prefHeight="51.0" prefWidth="725.0" style="-fx-background-color: #228B22;">
          <children>
-            <Label layoutX="17.0" layoutY="8.0" text="TableView with Search Filter" textFill="WHITE">
+            <Label layoutX="17.0" layoutY="8.0" text="Fluturimet dhe oraret" textFill="WHITE">
                <font>
                   <Font name="Comic Sans MS Bold Italic" size="25.0" />
                </font>
