@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `rezervimet` (
-  `id` int(11) NOT NULL,
+  id INT PRIMARY KEY AUTO_INCREMENT,,
   `emri_klientit` text NOT NULL,
   `destinacioni` text NOT NULL,
   `data_nisjes` date NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE `rezervimet` (
 --
 
 CREATE TABLE `u_serss` (
-  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  id INT PRIMARY KEY AUTO_INCREMENT,
   `u_emri` varchar(25) NOT NULL,
   `u_mbiemri` varchar(25) NOT NULL,
   `u_email`  varchar(25) NOT NULL,
