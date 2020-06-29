@@ -12,77 +12,71 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.info">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.info">
    <children>
-     <Pane layoutX="-6.0" layoutY="-6.0" prefHeight="147.0" prefWidth="894.0" style="-fx-background-color: #00bfff;" AnchorPane.bottomAnchor="444.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-6.0">
+      <Pane layoutX="-6.0" layoutY="-6.0" prefHeight="162.0" prefWidth="894.0" style="-fx-background-color: #00bfff;" AnchorPane.bottomAnchor="429.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-6.0">
          <children>
-            <Label layoutX="48.0" layoutY="94.0" prefHeight="49.0" prefWidth="116.0" text="MIDWEST" textFill="WHITE">
+            <Label layoutX="48.0" layoutY="94.0" prefHeight="49.0" prefWidth="116.0" textFill="WHITE">
                <font>
                   <Font name="Freestyle Script" size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="118.0" fitWidth="351.0" layoutX="24.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="145.0" fitWidth="290.0" layoutX="24.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@logo.png" />
+                  <Image url="@prishtina_logo.png" />
                </image>
             </ImageView>
          </children></Pane>
       <AnchorPane layoutX="14.0" layoutY="161.0" prefHeight="403.0" prefWidth="807.0" style="-fx-background-color: #F0F0F0;" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="161.0">
          <children>
             <GridPane layoutX="115.0" layoutY="65.0" prefHeight="263.0" prefWidth="597.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="147.0" AnchorPane.topAnchor="65.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.0" minWidth="0.0" prefWidth="273.2" />
-                <ColumnConstraints hgrow="SOMETIMES" maxWidth="597.0" minWidth="10.0" prefWidth="272.3999999999999" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="305.0" minWidth="0.0" prefWidth="273.2" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="597.0" minWidth="10.0" prefWidth="272.3999999999999" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
                <children>
-                  <Button id="button" contentDisplay="TOP" mnemonicParsing="false" prefHeight="135.0" prefWidth="264.0" stylesheets="@../stilet/stili.css" text="Button" textFill="#573bb8" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <graphic>
-                         <ImageView fitHeight="78.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@home.png" />
-                           </image></ImageView>
-                     </graphic>
-                  </Button>
-                  <Button id="button" onAction="#rez" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="145.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="Setting" textFill="#573bb8" GridPane.columnIndex="1">
-                     <graphic>
-                        <ImageView fitHeight="75.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@/application/stilet/photos/proces.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+
+                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#rez" prefHeight="145.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="Setting" textFill="#573bb8" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin></Button>
-                  <Button id="button" onAction="#rez" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="153.0" prefWidth="273.0" stylesheets="@../stilet/stili.css" text="Menu" textFill="#573bb8" GridPane.rowIndex="1">
-                     <graphic>
-                        <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@/application/stilet/photos/setting.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button id="button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#img1" prefHeight="151.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="Button" textFill="#573bb8" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <graphic>
-                        <ImageView fitHeight="82.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@/application/stilet/photos/airplane_icon.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="144.0" prefWidth="284.0" stylesheets="@../stilet/stili.css" />
-                  <ImageView fitHeight="90.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true">
+                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#rez" prefHeight="153.0" prefWidth="273.0" stylesheets="@../stilet/stili.css" text="Menu" textFill="#573bb8" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#img1" prefHeight="151.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="Button" textFill="#573bb8" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="144.0" prefWidth="284.0" stylesheets="@../stilet/stili.css" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                  <ImageView fitHeight="90.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <image>
-                        <Image url="@/application/stilet/photos/home.png" />
+                        <Image url="@home.png" />
                      </image>
                      <GridPane.margin>
-                        <Insets left="90.0" />
+                        <Insets left="100.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="75.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                     <image>
+                        <Image url="@proces.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="370.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                     <image>
+                        <Image url="@setting.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="100.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <ImageView fitHeight="82.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                     <image>
+                        <Image url="@airplane_icon.png" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="370.0" />
                      </GridPane.margin>
                   </ImageView>
                </children>
