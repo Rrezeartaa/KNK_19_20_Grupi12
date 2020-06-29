@@ -139,7 +139,17 @@ public class info {
 	  @FXML
 	  private void rez(ActionEvent event) throws Exception {
 	    
-	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/pl.fxml"));
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/reservation.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	    
+	  }
+	@FXML
+	  private void rezi(ActionEvent event) throws Exception {
+	    
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/FXMLDocument.fxml"));
 	      Scene scene = new Scene(parenti);
 	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	      primaryStage.setScene(scene);
