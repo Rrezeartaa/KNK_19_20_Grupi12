@@ -1,4 +1,4 @@
-package sample;
+package application;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
@@ -15,7 +15,7 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 
 public class halla extends Application {
-   
+    private static final String TEST_URL = "http://www.airportpristina.com/themes/simpleweb-startit/assets/videos/covid19-video.mp4";
 
     @Override
     public void start(Stage primaryStage) {
