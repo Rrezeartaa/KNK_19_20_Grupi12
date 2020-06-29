@@ -156,7 +156,7 @@ public class info implements Initializable{
 	}
     
     
-	
+	@FXML
 	  private VBox contentPane=new VBox();
 	private BaseController childController;
 	public void loadView(String screen) throws Exception {
