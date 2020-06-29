@@ -13,3 +13,16 @@
 .table-row-cell {
     -fx-background-color: rgba(0,0,0,0.7);
     -fx-font-weight:bold;
+    
+    
+    -fx-text-fill: whitesmoke;
+}
+
+
+
+.table-row-cell{
+    
+    -fx-text-fill: whitesmoke;
+}
+
+
