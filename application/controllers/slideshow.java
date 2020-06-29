@@ -35,7 +35,15 @@ public class slideshow implements Initializable {
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
     }
-    
+     @FXML
+	  private void s9(ActionEvent event) throws Exception {
+	    
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/info.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	  }
      @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         slideshow();
