@@ -2,10 +2,16 @@ package application.controllers;
 
 import java.io.IOException;
 import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
+
 import application.loginman;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,12 +22,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.paint.Color;
+//import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import application.databaza.DbConnection;
+//import application.databaza.DbConnection;
 
 public class login implements Initializable {
   @FXML
@@ -42,7 +53,7 @@ public class login implements Initializable {
   private PasswordField confpass;
   @FXML
   private TextField email;
-  @FXML
+ 
   
   @FXML
   private DatePicker dob;
@@ -50,12 +61,32 @@ public class login implements Initializable {
   private Button signButton;
   private loginman application;
   
-  
+  ResultSet resultset;
   PreparedStatement preparedStatement;
   Connection connection;
+	private static Connection dbConnection;
 
-  public public login(){
-      connection = (Connection) DbConnection.getConnection();
+	private final static String host = "localhost";
+	private final static String dbName = "aeroporti";
+	private final static String username = "root";
+	private final static String password = "";
+
+	public static Connection getConnection() {
+		if (dbConnection == null) {
+			try {
+				Class.forName("com.mysql.cj.jdbc.Driver");
+				//Class.forName("org.sqlite.JDBC");
+				dbConnection = DriverManager.getConnection(
+						"jdbc:mysql://" + host + "/" + dbName + "?useSSL=false&allowPublicKeyRetrieval=true", username,
+						password);
+			} catch (Exception ex) {
+				ex.printStackTrace();
+			}
+		}
+		return dbConnection;
+	}
+   public login(){
+      connection =getConnection();
   }
   
 
@@ -94,7 +125,7 @@ public class login implements Initializable {
                   Stage stage = (Stage) node.getScene().getWindow();
                   //stage.setMaximized(true);
                   stage.close();
-                  Scene scene = new Scene(FXMLLoader.load(getClass().getResource("application/signup.fxml")));
+                  Scene scene = new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("application/views/sample.fxml")));
                   stage.setScene(scene);
                   stage.show();
 
@@ -108,51 +139,46 @@ public class login implements Initializable {
     @FXML
   private void signUpButtonClick(ActionEvent event) throws Exception {
     
-      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/signup.fxml"));
+      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/signup.fxml"));
       Scene scene = new Scene(parenti);
       Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
       primaryStage.setScene(scene);
       primaryStage.show();  
   }
+    private void saveData() throws NoSuchAlgorithmException {
+
+        try {
+       	 
+            String st = "INSERT INTO u_serss (u_emri, u_mbiemri, u_email,u_hash) VALUES (?,?,?,?)";
+          
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] digest = md.digest((pass.getText()).getBytes());
+            String encodedHash = new String(digest);
+            preparedStatement = (PreparedStatement) connection.prepareStatement(st);
+            preparedStatement.setString(1, emri.getText());
+            preparedStatement.setString(2, mbiemri.getText());
+           // preparedStatement.setString(3, dob.getValue().toString());
+            preparedStatement.setString(3, email.getText());
+            preparedStatement.setString(4, encodedHash);   
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
  @FXML
   private void signUpiButtonClick(ActionEvent event) throws Exception {
-	  if (logini(emri.getText(), pass.getText())) {	  
-		  Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/hyrja.fxml"));
+	     
+		  Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/hyrja.fxml"));
 	      Scene scene = new Scene(parenti);
 	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	      primaryStage.setScene(scene);
 	      primaryStage.show();
-	      
-	      saveData();
-	      
-     }	 
-	  else {
-		  Alert alert = new Alert(AlertType.ERROR);
-	      alert.setContentText("Gabim! Ju lutem shenoni te gjitha te dhenat!");
-	      alert.showAndWait();
-	  }
+	       saveData();
+	       
   }
  
- private void saveData() {
-
-     try {
-    	 
-         String st = "INSERT INTO users (u_emri, u_mbiemri, u_datelindja, u_email) VALUES (?,?,?,?)";
-         
-         preparedStatement = (PreparedStatement) connection.prepareStatement(st);
-         preparedStatement.setString(1, emri.getText());
-         preparedStatement.setString(2, mbiemri.getText());
-         preparedStatement.setString(3, dob.getValue().toString());
-         preparedStatement.setString(4, email.getText());
-             
-         preparedStatement.executeUpdate();
-
-     } catch (SQLException ex) {
-         System.out.println(ex.getMessage());
-     }
- }
- 
- private String logIn() {
+ private String logIn() throws NoSuchAlgorithmException {
 	 
      String status = "Success";
      String email = usernameField.getText();
@@ -162,17 +188,21 @@ public class login implements Initializable {
          System.out.println("Empty credentials");
          status = "Error";
      } else {
-         
-         String sql = "SELECT * FROM admins Where email = ? and password = ?";
+
+    	 MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
+        // messageDigest.update(Encoding.UTF8.GetBytes(salt_encoded));
+    	 byte[] digest = messageDigest.digest((pass.getText()).getBytes());
+         String encodedHash = new String(digest);
+         String sql = "SELECT * FROM u_serss Where u_email="+email+"and u_hash="+encodedHash;
          
          try {
-        	 
-             preparedStatement = con.prepareStatement(sql);
+        	        	 
+             preparedStatement = connection.prepareStatement(sql);
              preparedStatement.setString(1, email);
-             preparedStatement.setString(2, password);
-             resultSet = preparedStatement.executeQuery();
+             preparedStatement.setString(2, encodedHash);
+             resultset = preparedStatement.executeQuery();
              
-             if (!resultSet.next()) {
+             if (!resultset.next()) {
                  System.out.println("Enter Correct Email/Password");
                  status = "Error";
              } else {
@@ -188,4 +218,18 @@ public class login implements Initializable {
      return status;
  }
  
+
+  final KeyCombination key= new KeyCodeCombination(KeyCode.ENTER);
+  @FXML
+  public void onScreenKeyPressed(KeyEvent event) throws Exception {
+	  if (key.match(event)) {
+	      
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/sample.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	      
+	    }  
+  }
 }
