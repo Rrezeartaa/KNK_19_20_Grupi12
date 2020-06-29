@@ -58,7 +58,7 @@
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin></Button>
-                  <Button id="button" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="153.0" prefWidth="273.0" stylesheets="@../stilet/stili.css" text="Menu" textFill="#573bb8" GridPane.rowIndex="1">
+                  <Button id="button" onAction="#rez" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="153.0" prefWidth="273.0" stylesheets="@../stilet/stili.css" text="Menu" textFill="#573bb8" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
                            <image>
