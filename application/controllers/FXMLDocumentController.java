@@ -31,3 +31,25 @@ public class FXMLDocumentController implements Initializable {
     @FXML private TableColumn<Employee, String> Date;
     @FXML private TableColumn<Employee, String> Scheduled;
     @FXML private TableColumn<Employee, String> Status;
+
+        
+   
+                  
+    //observalble list to store data
+    private final ObservableList<Employee> dataList = FXCollections.observableArrayList();
+    
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {      
+                               
+        Airline.setCellValueFactory(new PropertyValueFactory<>("Airline"));       
+        From.setCellValueFactory(new PropertyValueFactory<>("From"));        
+        Date.setCellValueFactory(new PropertyValueFactory<>("Date"));        
+        Scheduled.setCellValueFactory(new PropertyValueFactory<>("Scheduled"));        
+        Status.setCellValueFactory(new PropertyValueFactory<>("Status"));       
+        
+        
+        Employee emp1 = new Employee("CHAIR Airlines", "Zurich", "28 Jun", "08:05", "Arrived 08:22");
+        Employee emp2 = new Employee( "EDELWEISS Air", "Zurich", "26 Jun", "08:15", "Arrive 08:38");
+        
+        
