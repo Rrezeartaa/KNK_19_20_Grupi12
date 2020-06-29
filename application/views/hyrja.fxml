@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../stilet/pr.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.login">
+<VBox onKeyPressed="#onScreenKeyPressed" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../stilet/pr.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.login">
    <children>
       <Text fill="#310387" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25px; -fx-text-alignment: center;" text="Aeroporti &quot;Adem Jashari&quot;" wrappingWidth="293.60009765625">
          <font>
