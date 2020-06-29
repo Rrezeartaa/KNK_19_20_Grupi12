@@ -14,3 +14,20 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+/**
+ *
+ * @author Cool IT Help
+ */
+
+public class FXMLDocumentController implements Initializable {
+    
+    @FXML
+    private Label label;
+  
+    @FXML private TextField filterField;
+    @FXML private TableView<Employee> tableview;
+    @FXML private TableColumn<Employee, String> Airline;
+    @FXML private TableColumn<Employee, String> From;
+    @FXML private TableColumn<Employee, String> Date;
+    @FXML private TableColumn<Employee, String> Scheduled;
+    @FXML private TableColumn<Employee, String> Status;
