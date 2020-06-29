@@ -34,5 +34,21 @@
       </Label>
         
         
+         <Pane layoutY="2.0" prefHeight="51.0" prefWidth="725.0" style="-fx-background-color: #228B22;">
+         <children>
+            <Label layoutX="17.0" layoutY="8.0" text="TableView with Search Filter" textFill="WHITE">
+               <font>
+                  <Font name="Comic Sans MS Bold Italic" size="25.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane layoutY="53.0" prefHeight="5.0" prefWidth="725.0" style="-fx-background-color: #ECF142;" />
+    </children>
+</AnchorPane>
+
+
+        
+        
         
      
