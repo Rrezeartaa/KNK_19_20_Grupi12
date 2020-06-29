@@ -10,3 +10,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+public class JavaFXTableViewAddRows extends Application {
+    
+    @Override
+    public void start(Stage stage) throws Exception 
