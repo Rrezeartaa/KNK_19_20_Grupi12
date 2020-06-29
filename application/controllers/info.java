@@ -87,4 +87,42 @@ public class info {
 	      primaryStage.show();
 	    
 	  }
+	 @FXML
+	  private void rez(ActionEvent event) throws Exception {
+	    
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/reservation.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	    
+	  }
+	  @FXML
+	  private void s6(ActionEvent event) throws Exception {
+	    
+		  Scale newScale = new Scale();
+		    newScale.setX(img.getScaleX() + 2);
+		    newScale.setY(img.getScaleY() + 2);
+		    newScale.setPivotX(img.getScaleX());
+		    newScale.setPivotY(img.getScaleY());
+		    img.getTransforms().add(newScale);
+	    
+	  }
+	  @FXML
+	  private void s7(ActionEvent event) throws Exception {
+	    
+		  Scale newScale = new Scale();
+		    newScale.setX(img.getScaleX() + 2);
+		    newScale.setY(img.getScaleY() + 2);
+		    newScale.setPivotX(img.getScaleX());
+		    newScale.setPivotY(img.getScaleY());
+		    img.getTransforms().add(newScale);
+	    
+	  }
+	  @FXML
+	  private void s8(ActionEvent event) throws Exception {
+	    
+		  box.setStyle("-fx-background-color:red");
+	    
+	  }
 }
