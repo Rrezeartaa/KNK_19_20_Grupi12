@@ -24,3 +24,13 @@ public class Employee {
     
     }
     
+         
+    public String getAirline() {
+        return Airline.get();
+    }
+
+    public void setAirline(String Airline) {
+        this.Airline.set(Airline);
+    }
+    
+    
