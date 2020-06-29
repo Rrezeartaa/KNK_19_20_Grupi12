@@ -95,27 +95,9 @@ public class login implements Initializable {
 //    application= new loginman();
   }
 
-  private boolean login(String username, String password) {
-    return application.find(username, password) != null;
-  }//kjo lidhet me metoden find te klasa loginman e rregulloni me databaze 
-   private boolean logini(String username, String password) {
-	    return application.find(username, password) != null;
-	  }//kjo lidhet me metoden find te klasa loginman e rregulloni me databaze 
-
   @FXML
   private void loginButtonClick(ActionEvent event) throws Exception {
-    /*if (login(usernameField.getText(), passwordField.getText())) {
-      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/signup.fxml"));
-      Scene scene = new Scene(parenti);
-      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-      primaryStage.setScene(scene);
-      primaryStage.show();
-    } else {
-      Alert alert = new Alert(AlertType.ERROR);
-      alert.setContentText("Gabim! Shenoni emrin dhe password-in edhe njehere!");
-      alert.showAndWait();
-    }*/
-	  
+   
 	  if (event.getSource() == loginButton) {
           
           if (logIn().equals("Success")) {
@@ -123,7 +105,6 @@ public class login implements Initializable {
 
                   Node node = (Node) event.getSource();
                   Stage stage = (Stage) node.getScene().getWindow();
-                  //stage.setMaximized(true);
                   stage.close();
                   Scene scene = new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("application/views/sample.fxml")));
                   stage.setScene(scene);
@@ -218,7 +199,6 @@ public class login implements Initializable {
      return status;
  }
  
-
   final KeyCombination key= new KeyCodeCombination(KeyCode.ENTER);
   @FXML
   public void onScreenKeyPressed(KeyEvent event) throws Exception {
