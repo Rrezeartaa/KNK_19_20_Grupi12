@@ -34,3 +34,15 @@ public class Employee {
     }
     
     
+    
+    public String getFrom() {
+        return From.get();
+    }
+
+    public void setFrom(String From) {
+    	From.set(From);
+    }
+    
+    
+    
+    
