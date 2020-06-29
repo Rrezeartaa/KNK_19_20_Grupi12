@@ -45,4 +45,19 @@ public class Employee {
     
     
     
+     public String getDate() {
+        return Date.get();
+    }
+
+    public void setDate(String Date) {
+    	Date.set(Date);
+    }
+    
+    
+    public String getScheduled() {
+        return Scheduled.get();
+    }
+
+    
+    
     
