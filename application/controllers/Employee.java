@@ -13,3 +13,14 @@ public class Employee {
     private  final SimpleStringProperty Date;
     private  final SimpleStringProperty Scheduled;
     private  final SimpleIntegerProperty Status;
+    
+       Employee(String Airline, String From, String Date, String Scheduled, Integer Status)
+    {      
+       this.Airline = new SimpleIntegerProperty(Airline);
+       this.From = new SimpleStringProperty(From);
+       this.Date =  new SimpleStringProperty(Date);
+       this.Scheduled =  new SimpleStringProperty(Scheduled);
+       this.Status =  new SimpleIntegerProperty(Status);
+    
+    }
+    
