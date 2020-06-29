@@ -3,6 +3,7 @@ package application.controllers;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import application.loginman;
 import javafx.event.ActionEvent;
@@ -40,6 +41,10 @@ public class login implements Initializable {
   @FXML
   private TextField email;
   @FXML
+  
+  @FXML
+  private DatePicker dob;
+  
   private Button signButton;
   private loginman application;
   
@@ -94,7 +99,10 @@ public class login implements Initializable {
 	      Scene scene = new Scene(parenti);
 	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	      primaryStage.setScene(scene);
-	      primaryStage.show();		  		 
+	      primaryStage.show();
+	      
+	      saveData();
+	      
      }	 
 	  else {
 		  Alert alert = new Alert(AlertType.ERROR);
@@ -102,4 +110,24 @@ public class login implements Initializable {
 	      alert.showAndWait();
 	  }
   }
+ 
+ private void saveData() {
+
+     try {
+    	 
+         String st = "INSERT INTO users (u_emri, u_mbiemri, u_datelindja, u_email) VALUES (?,?,?,?)";
+         
+         preparedStatement = (PreparedStatement) connection.prepareStatement(st);
+         preparedStatement.setString(1, emri.getText());
+         preparedStatement.setString(2, mbiemri.getText());
+         preparedStatement.setString(3, dob.getValue().toString());
+         preparedStatement.setString(4, email.getText());
+             
+         preparedStatement.executeUpdate();
+
+     } catch (SQLException ex) {
+         System.out.println(ex.getMessage());
+     }
+ }
+ 
 }
