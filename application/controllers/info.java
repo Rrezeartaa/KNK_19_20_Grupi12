@@ -32,7 +32,6 @@ public class info implements Initializable{
 	ImageView imgi=new ImageView();
 	@FXML
 	VBox box=new VBox();
-	@FXML
 	
 	@FXML
     private TextField txtDestinacion1;
@@ -47,7 +46,7 @@ public class info implements Initializable{
     private TextField txtEmri1;
 
     @FXML
-    private Tab txtEmri2;
+    private TextField txtEmri2;
 
     @FXML
     private TextField txtDestinacioni2;
@@ -86,7 +85,7 @@ public class info implements Initializable{
   		return dbConnection;
   	}
   	
-  	public public info() {
+  	public info() {
   		connection =getConnection();
 	}
     
