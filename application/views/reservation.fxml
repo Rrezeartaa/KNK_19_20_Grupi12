@@ -58,6 +58,11 @@
                               <Font name="Forte" size="30.0" />
                            </font>
                         </Text>
+                        <Button mnemonicParsing="false" style="-fx-background-color: purple;" text="Rezervo!" textFill="#971af0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="150.0" />
+                           </GridPane.margin>
+                        </Button>
                            </children>
                         </GridPane>
                      </children>
@@ -68,7 +73,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <GridPane alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="122.0" prefWidth="599.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                        <GridPane id="root" alignment="CENTER" layoutX="-125.0" layoutY="-22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="163.0" prefWidth="616.0" stylesheets="@../stilet/reservation.css" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="291.20001220703125" />
                               <ColumnConstraints hgrow="SOMETIMES" maxWidth="313.5999755859375" minWidth="10.0" prefWidth="308.79998779296875" />
@@ -85,7 +90,7 @@
                                     <Insets right="50.0" />
                                  </GridPane.margin>
                                  <font>
-                                    <Font size="16.0" />
+                                    <Font name="System Bold" size="16.0" />
                                  </font>
                               </Text>
                               <Text fill="#9a0e7b" strokeType="OUTSIDE" strokeWidth="0.0" text="Data e shkuarjes" GridPane.rowIndex="1">
@@ -107,6 +112,7 @@
                               <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="1" />
                               <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                               <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                            </children>
                         </GridPane>
                      </children>
