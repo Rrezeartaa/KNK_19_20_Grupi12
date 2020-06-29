@@ -149,13 +149,25 @@ public class login implements Initializable {
     }
  @FXML
   private void signUpiButtonClick(ActionEvent event) throws Exception {
-	     
+	     if(emri.getText().isEmpty() || pass.getText().isEmpty()) {
+		 Alert alert = new Alert(AlertType.ERROR);
+	      alert.setContentText("Shenoni emrin dhe password!");
+	      alert.showAndWait();
+		 
+	 }
+	 if(!pass.getText().equals(confpass.getText())) {
+		 Alert alert = new Alert(AlertType.ERROR);
+	      alert.setContentText("Fjalekalimet nuk jane te njejte!");
+	      alert.showAndWait();
+		 
+	 }
+	 else {
 		  Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/hyrja.fxml"));
 	      Scene scene = new Scene(parenti);
 	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	      primaryStage.setScene(scene);
 	      primaryStage.show();
-	       saveData();
+	       saveData();}
 	       
   }
  
