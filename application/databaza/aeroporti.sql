@@ -23,60 +23,34 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
---
--- Table structure for table `admins`
---
-
-CREATE TABLE `admins` (
-  `id` int(11) NOT NULL,
-  `email` text NOT NULL,
-  `password` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `admins`
+-- Table structure for table `u_serss`
 --
 
-INSERT INTO `admins` (`id`, `email`, `password`) VALUES
-(1, 'lum', '123');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users`
---
-
-CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
+CREATE TABLE `u_serss` (
+  id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `u_emri` varchar(25) NOT NULL,
   `u_mbiemri` varchar(25) NOT NULL,
-  `u_datelindja` date NOT NULL DEFAULT current_timestamp(),
-  `u_gjinia` text NOT NULL DEFAULT 'Male',
-  `u_email` varchar(45) NOT NULL,
-  `u_password` text NOT NULL DEFAULT '123'
+  `u_email`  varchar(25) NOT NULL,
+  `u_hash` varchar(200) NOT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `u_serss`
 --
-
-INSERT INTO `users` (`user_id`, `u_emri`, `u_mbiemri`, `u_datelindja`, `u_gjinia`, `u_email`, `u_password`) VALUES
-(1, 'john', 'doe', '2013-06-05', 'Male', 'john.doe@mail.com', '123');
+INSERT INTO `admins` (`id`, `emali`, `password`) VALUES
+(1, 'lum', '123');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admins`
+-- Indexes for table `u_serss`
 --
-ALTER TABLE `admins`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
+ALTER TABLE `u_serss`
   ADD PRIMARY KEY (`user_id`);
 
 --
@@ -84,15 +58,9 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT for table `u_serss`
 --
-ALTER TABLE `admins`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
+ALTER TABLE `u_serss`
   MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
