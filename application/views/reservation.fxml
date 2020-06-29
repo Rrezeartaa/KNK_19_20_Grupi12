@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
@@ -11,14 +13,12 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
-<TabPane prefHeight="376.0" prefWidth="616.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane prefHeight="376.0" prefWidth="616.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.info">
         <tabs>
           <Tab text="Biletat njëdrejtimëshe">
             <content>
-               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <GridPane id="root" alignment="CENTER" layoutX="-125.0" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="616.0" stylesheets="@../stilet/reservation.css" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
                           <columnConstraints>
@@ -49,8 +49,8 @@
                                     <Font name="System Bold Italic" size="16.0" />
                                  </font>
                               </Text>
-                              <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="Destinacioni" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="txtDestinacion1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="Destinacioni" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="txtDataNisjes1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Text fill="#cabcdf" strokeType="OUTSIDE" strokeWidth="0.0" text="Rezervoni bileten tuaj tani!" GridPane.rowIndex="3">
                            <font>
                               <Font name="Forte" size="30.0" />
@@ -61,7 +61,7 @@
                               <Font name="Forte" size="30.0" />
                            </font>
                         </Text>
-                        <Button mnemonicParsing="false" style="-fx-background-color: purple;" text="Rezervo!" textFill="#971af0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <Button fx:id="btnRezervo1" mnemonicParsing="false" onAction="#rezervoButtonAction1" style="-fx-background-color: purple;" text="Rezervo!" textFill="#971af0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="150.0" />
                            </GridPane.margin>
@@ -70,15 +70,15 @@
                            <font>
                               <Font name="System Bold" size="16.0" />
                            </font></Label>
-                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="Emri juaj" GridPane.columnIndex="1" />
+                        <TextField fx:id="txtEmri1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="Emri juaj" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
-                              <Button layoutX="35.0" layoutY="294.0" onAction="#home" mnemonicParsing="false" style="-fx-background-color: #837ddb;" text="Kthehu" textFill="#c70808" />
+                  <Button layoutX="35.0" layoutY="294.0" mnemonicParsing="false" onAction="#home" style="-fx-background-color: #837ddb;" text="Kthehu" textFill="#c70808" />
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Biletat dydrejtimëshe">
+          <Tab fx:id="txtEmri2" text="Biletat dydrejtimëshe">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -119,10 +119,10 @@
                                     <Font name="System Bold Italic" size="16.0" />
                                  </font>
                               </Text>
-                              <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="Destinacioni" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="m/dd/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                              <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="m/dd/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                        <Button mnemonicParsing="false" prefHeight="14.0" prefWidth="62.0" style="-fx-background-color: purple;" text="Rezervo!" textFill="#ffe4fe" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                              <TextField fx:id="txtDestinacioni2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="Destinacioni" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <DatePicker fx:id="txtDataNisjes2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="m/dd/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <DatePicker fx:id="txtDataKthimit2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="m/dd/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Button fx:id="btnRezervo2" mnemonicParsing="false" onAction="#rezervoButtonAction2" prefHeight="14.0" prefWidth="62.0" style="-fx-background-color: purple;" text="Rezervo!" textFill="#ffe4fe" GridPane.columnIndex="1" GridPane.rowIndex="4">
                            <GridPane.margin>
                               <Insets left="150.0" />
                            </GridPane.margin></Button>
