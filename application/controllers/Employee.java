@@ -1,12 +1,8 @@
-package javafxtableviewaddrows;
+package application.controllers;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 
-/**
- *
- * @author Cool IT help
- */
 public class Employee {    
     private  final SimpleStringProperty Airline;
     private  final SimpleStringProperty From;
@@ -14,13 +10,13 @@ public class Employee {
     private  final SimpleStringProperty Scheduled;
     private  final SimpleIntegerProperty Status;
     
-       Employee(String Airline, String From, String Date, String Scheduled, Integer Status)
+       Employee(String Airline, String From, String Date, String Scheduled, String Status)
     {      
-       this.Airline = new SimpleIntegerProperty(Airline);
+       this.Airline = new SimpleStringProperty(Airline);
        this.From = new SimpleStringProperty(From);
        this.Date =  new SimpleStringProperty(Date);
        this.Scheduled =  new SimpleStringProperty(Scheduled);
-       this.Status =  new SimpleIntegerProperty(Status);
+       this.Status =  new SimpleStringProperty(Status);
     
     }
     
@@ -36,7 +32,7 @@ public class Employee {
     
     
     public String getFrom() {
-        return From.get();
+      //  return From.get();
     }
 
     public void setFrom(String From) {
@@ -50,7 +46,7 @@ public class Employee {
     }
 
     public void setDate(String Date) {
-    	Date.set(Date);
+    	//Date.set(Date);
     }
     
     
@@ -71,7 +67,7 @@ public class Employee {
 
     
     public void setStatus(int Status) {
-        this.Status.set(Status);
+       // this.Status.set(Status);
     }
      }
     
