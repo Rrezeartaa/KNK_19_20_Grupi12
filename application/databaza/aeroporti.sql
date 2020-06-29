@@ -23,6 +23,19 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+--
+-- Table structure for table `rezervimet`
+--
+
+CREATE TABLE `rezervimet` (
+  `id` int(11) NOT NULL,
+  `emri_klientit` text NOT NULL,
+  `destinacioni` text NOT NULL,
+  `data_nisjes` date NOT NULL,
+  `data_kthimit` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `u_serss`
