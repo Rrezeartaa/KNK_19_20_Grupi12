@@ -78,7 +78,7 @@
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab fx:id="txtEmri2" text="Biletat dydrejtimëshe">
+          <Tab text="Biletat dydrejtimëshe">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
@@ -131,7 +131,7 @@
                               <Font name="System Bold" size="16.0" />
                            </font>
                         </Label>
-                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="Emri juaj" GridPane.columnIndex="1" />
+                        <TextField fx:id="txtEmri2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="Emri juaj" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
                      </children>
