@@ -58,6 +58,21 @@ public class Employee {
         return Scheduled.get();
     }
 
+     public void setScheduledt(String street) {
+        this.Scheduled.set(street);
+    }
     
+   
+
+    
+    public int getStatus() {
+        return Status.get();
+    }
+
+    
+    public void setStatus(int Status) {
+        this.Status.set(Status);
+    }
+     }
     
     
