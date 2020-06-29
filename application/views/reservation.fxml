@@ -16,21 +16,22 @@
         <tabs>
           <Tab text="Biletat njëdrejtimëshe">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <GridPane id="root" alignment="CENTER" layoutX="-125.0" layoutY="-22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="163.0" prefWidth="616.0" stylesheets="@../stilet/reservation.css" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                        <GridPane id="root" alignment="CENTER" layoutX="-125.0" layoutY="38.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="175.0" prefWidth="616.0" stylesheets="@../stilet/reservation.css" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="38.0">
                           <columnConstraints>
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="291.20001220703125" />
-                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="313.5999755859375" minWidth="10.0" prefWidth="308.79998779296875" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="304.79998779296875" minWidth="10.0" prefWidth="234.39996337890625" />
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="375.2000366210937" minWidth="10.0" prefWidth="375.2000366210937" />
                           </columnConstraints>
                           <rowConstraints>
-                            <RowConstraints maxHeight="30.4" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="35.8000244140625" minHeight="10.0" prefHeight="35.8000244140625" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="67.80001220703126" minHeight="10.0" prefHeight="53.59998779296875" vgrow="SOMETIMES" />
-                        <RowConstraints maxHeight="81.4" minHeight="10.0" prefHeight="52.80001220703126" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="36.60001220703125" minHeight="10.0" prefHeight="31.000006103515624" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="31.200018310546874" minHeight="10.0" prefHeight="27.799993896484374" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="42.2000015258789" minHeight="10.0" prefHeight="42.2000015258789" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="67.80001220703126" minHeight="10.0" prefHeight="37.99998168945311" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="81.4" minHeight="10.0" prefHeight="29.20001831054688" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Text fill="#b992cd" strokeType="OUTSIDE" strokeWidth="0.0" text="Prishtinë- Ku?">
+                              <Text fill="#b992cd" strokeType="OUTSIDE" strokeWidth="0.0" text="Prishtinë- Ku?" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="50.0" />
                                  </GridPane.margin>
@@ -38,7 +39,7 @@
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#dd7ec8" strokeType="OUTSIDE" strokeWidth="0.0" text="Data e shkuarjes" GridPane.rowIndex="1">
+                              <Text fill="#dd7ec8" strokeType="OUTSIDE" strokeWidth="0.0" text="Data e shkuarjes" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets right="50.0" />
                                  </GridPane.margin>
@@ -46,23 +47,28 @@
                                     <Font name="System Bold Italic" size="16.0" />
                                  </font>
                               </Text>
-                              <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="1" />
-                              <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                        <Text fill="#cabcdf" strokeType="OUTSIDE" strokeWidth="0.0" text="Rezervoni bileten tuaj tani!" GridPane.rowIndex="2">
+                              <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="Destinacioni" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Text fill="#cabcdf" strokeType="OUTSIDE" strokeWidth="0.0" text="Rezervoni bileten tuaj tani!" GridPane.rowIndex="3">
                            <font>
                               <Font name="Forte" size="30.0" />
                            </font>
                         </Text>
-                        <Text fill="#bf528a" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuk do te zhgenjeheni me sherbimin tone!" wrappingWidth="546.2464599609375" GridPane.rowIndex="3">
+                        <Text fill="#bf528a" strokeType="OUTSIDE" strokeWidth="0.0" text="Nuk do te zhgenjeheni me sherbimin tone!" wrappingWidth="546.2464599609375" GridPane.rowIndex="4">
                            <font>
                               <Font name="Forte" size="30.0" />
                            </font>
                         </Text>
-                        <Button mnemonicParsing="false" style="-fx-background-color: purple;" text="Rezervo!" textFill="#971af0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <Button mnemonicParsing="false" style="-fx-background-color: purple;" text="Rezervo!" textFill="#971af0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets left="150.0" />
                            </GridPane.margin>
                         </Button>
+                        <Label text="Emri" textFill="#d74f6f">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font></Label>
+                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="Emri juaj" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
                      </children>
@@ -73,19 +79,20 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <GridPane id="root" alignment="CENTER" layoutX="-125.0" layoutY="-22.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="163.0" prefWidth="616.0" stylesheets="@../stilet/reservation.css" AnchorPane.bottomAnchor="133.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                        <GridPane id="root" alignment="CENTER" layoutX="-125.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="158.0" prefWidth="616.0" stylesheets="@../stilet/reservation.css" AnchorPane.bottomAnchor="138.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
                            <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="291.20001220703125" />
-                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="313.5999755859375" minWidth="10.0" prefWidth="308.79998779296875" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.20001220703125" minWidth="10.0" prefWidth="228.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="381.59999999999997" minWidth="10.0" prefWidth="381.59999999999997" />
                            </columnConstraints>
                            <rowConstraints>
-                              <RowConstraints maxHeight="30.4" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="30.4" minHeight="10.0" prefHeight="30.4" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="30.39999999999999" minHeight="10.0" prefHeight="30.39999999999999" vgrow="SOMETIMES" />
-                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="30.4" minHeight="10.0" prefHeight="19.60001220703125" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="45.20001831054688" minHeight="1.0000061035156236" prefHeight="42.399987792968744" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="53.79999389648438" minHeight="10.0" prefHeight="20.799993896484374" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="52.00000610351563" minHeight="10.0" prefHeight="48.80000000000001" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="30.80000000000001" minHeight="10.0" prefHeight="28.80000000000001" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Text fill="#681b8c" strokeType="OUTSIDE" strokeWidth="0.0" text="Prishtinë- Ku?">
+                              <Text fill="#681b8c" strokeType="OUTSIDE" strokeWidth="0.0" text="Prishtinë- Ku?" GridPane.rowIndex="1">
                                  <GridPane.margin>
                                     <Insets right="50.0" />
                                  </GridPane.margin>
@@ -93,26 +100,35 @@
                                     <Font name="System Bold" size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#9a0e7b" strokeType="OUTSIDE" strokeWidth="0.0" text="Data e shkuarjes" GridPane.rowIndex="1">
+                              <Text fill="#9a0e7b" strokeType="OUTSIDE" strokeWidth="0.0" text="Data e shkuarjes" GridPane.rowIndex="2">
                                  <GridPane.margin>
                                     <Insets right="50.0" />
                                  </GridPane.margin>
                                  <font>
-                                    <Font size="16.0" />
+                                    <Font name="System Bold Italic" size="16.0" />
                                  </font>
                               </Text>
-                              <Text fill="#640c4f" strokeType="OUTSIDE" strokeWidth="0.0" text="Data e kthimit" GridPane.rowIndex="2">
+                              <Text fill="#640c4f" strokeType="OUTSIDE" strokeWidth="0.0" text="Data e kthimit" GridPane.rowIndex="3">
                                  <GridPane.margin>
                                     <Insets right="50.0" />
                                  </GridPane.margin>
                                  <font>
-                                    <Font size="16.0" />
+                                    <Font name="System Bold Italic" size="16.0" />
                                  </font>
                               </Text>
-                              <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="1" />
-                              <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                              <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                        <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="Destinacioni" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="m/dd/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <DatePicker maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="m/dd/yyyy" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Button mnemonicParsing="false" prefHeight="14.0" prefWidth="62.0" style="-fx-background-color: purple;" text="Rezervo!" textFill="#ffe4fe" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <GridPane.margin>
+                              <Insets left="150.0" />
+                           </GridPane.margin></Button>
+                        <Label text="Emri" textFill="#d05dd2">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="26.0" prefWidth="210.0" promptText="Emri juaj" GridPane.columnIndex="1" />
                            </children>
                         </GridPane>
                      </children>
