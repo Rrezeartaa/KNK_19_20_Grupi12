@@ -16,7 +16,7 @@
                <graphic>
                   <ImageView fitHeight="41.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@back.jpg" />
+                        <Image url="@/application/stilet/photos/back.jpg" />
                      </image></ImageView>
                </graphic>
             </Button>
