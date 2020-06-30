@@ -338,6 +338,32 @@ public class info implements Initializable{
 		    imgi.getTransforms().add(newScale);
 	    
 	  }
+		  final KeyCombination keyii= new KeyCodeCombination(KeyCode.P);
+	  @FXML
+	  public void plus(KeyEvent event) throws Exception {
+		  if (keyii.match(event)) {
+
+			  Scale newScale = new Scale();
+			    newScale.setX(imgi.getScaleX() + 2);
+			    newScale.setY(imgi.getScaleY() + 2);
+			    newScale.setPivotX(imgi.getScaleX());
+			    newScale.setPivotY(imgi.getScaleY());
+			    imgi.getTransforms().add(newScale);
+		  }
+	   }
+	  final KeyCombination keyiii= new KeyCodeCombination(KeyCode.M);
+	  @FXML
+	  public void minus(KeyEvent event) throws Exception {
+		  if (keyiii.match(event)) {
+
+			  Scale newScale = new Scale();
+			    newScale.setX(imgi.getScaleX() - 0.5);
+			    newScale.setY(imgi.getScaleY() - 0.5);
+			    newScale.setPivotX(imgi.getScaleX());
+			    newScale.setPivotY(imgi.getScaleY());
+			    imgi.getTransforms().add(newScale);
+		  }
+	   }
 	  @FXML
 	  private void s7(ActionEvent event) throws Exception {
 	    
