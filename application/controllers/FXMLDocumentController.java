@@ -7,19 +7,33 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
-
-public class FXMLDocumentController implements Initializable {
-    
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyCodeCombination;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
+/**
+ *
+ * @author Cool IT Help
+ */
+public class pl implements Initializable {
+    @FXML
+    private AnchorPane pane;
     @FXML
     private Label label;
-  
     @FXML private TextField filterField;
     @FXML private TableView<Employee> tableview;
     @FXML private TableColumn<Employee, String> Airline;
@@ -27,21 +41,20 @@ public class FXMLDocumentController implements Initializable {
     @FXML private TableColumn<Employee, String> Date;
     @FXML private TableColumn<Employee, String> Scheduled;
     @FXML private TableColumn<Employee, String> Status;
-
-    private final ObservableList<Employee> dataList = FXCollections.observableArrayList();
     
+    private final ObservableList<Employee> dataList = FXCollections.observableArrayList();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {      
-                               
+             
         Airline.setCellValueFactory(new PropertyValueFactory<>("Airline"));       
         From.setCellValueFactory(new PropertyValueFactory<>("From"));        
         Date.setCellValueFactory(new PropertyValueFactory<>("Date"));        
         Scheduled.setCellValueFactory(new PropertyValueFactory<>("Scheduled"));        
         Status.setCellValueFactory(new PropertyValueFactory<>("Status"));       
-               
+       
         Employee emp1 = new Employee("CHAIR Airlines", "Zurich", "28 Jun", "08:05", "Arrived 08:22");
-        Employee emp2 = new Employee( "EDELWEISS Air", "Zurich", "26 Jun", "08:15", "Arrived 08:38");
+        Employee emp2 = new Employee( "EDELWEISS Air", "Zurich", "26 Jun", "08:15", "Arrive 08:38");
         Employee emp3 = new Employee( "TURKISH Airlines", "Instambul", "3 July", "08:20", "Cancelled");
         Employee emp4 = new Employee("EASYJET Europe", "Berlin", "04 July", "08:35", "Cancelled"); 
         Employee emp5 = new Employee("EUROWINGS ", "Bern", "30 Jun", "08:05", "Arrived 08:22");
@@ -50,8 +63,9 @@ public class FXMLDocumentController implements Initializable {
         Employee emp8 = new Employee("SWISS", "Oslo", "05 July", "11:35", "Cancelled");  
            
         dataList.addAll(emp1,emp2, emp3, emp4,emp5,emp6,emp7,emp8);
-            FilteredList<Employee> filteredData = new FilteredList<>(dataList, b -> true);
-       
+        
+        FilteredList<Employee> filteredData = new FilteredList<>(dataList, b -> true);
+        
 		filterField.textProperty().addListener((observable, oldValue, newValue) -> {
 			filteredData.setPredicate(employee -> {
 				if (newValue == null || newValue.isEmpty()) {
@@ -60,9 +74,9 @@ public class FXMLDocumentController implements Initializable {
 				String lowerCaseFilter = newValue.toLowerCase();
 				
 				if (employee.getFrom().toLowerCase().indexOf(lowerCaseFilter) != -1 ) {
-					return true; 
+					return true; // Filter matches first name.
 				} else if (employee.getScheduled().toLowerCase().indexOf(lowerCaseFilter) != -1) {
-					return true;
+					return true; // Filter matches last name.
 				}
 				else if (String.valueOf(employee.getStatus()).indexOf(lowerCaseFilter)!=-1)
 				     return true;
@@ -70,14 +84,23 @@ public class FXMLDocumentController implements Initializable {
 				    	 return false; 
 			});
 		});
-		
 		SortedList<Employee> sortedData = new SortedList<>(filteredData);
 		
 		sortedData.comparatorProperty().bind(tableview.comparatorProperty());
 		
 		tableview.setItems(sortedData);
-	    				
-         }    
+		  pane.setOnKeyPressed(new EventHandler<KeyEvent>() {
+		        @Override
+		        public void handle(KeyEvent t) {
+		            KeyCode key = t.getCode();
+		            if (key == KeyCode.ESCAPE){
+		            	Stage sb = (Stage)pane.getScene().getWindow();
+		                sb.close();
+		            }
+		        }
+		    });     
+        
+    }    
     @FXML
 	  private void home(ActionEvent event) throws Exception {
 	    
