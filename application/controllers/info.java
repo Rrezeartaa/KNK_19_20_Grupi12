@@ -1,5 +1,6 @@
 package application.controllers;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -14,7 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent; 
+import javafx.scene.Parent;  //////////fxml mi kshyr !!!!!
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -36,7 +37,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.geometry.Pos;
 
-public class info implements Initializable{	
+public class info implements Initializable {	
+	
+	
 	@FXML
 	ImageView imgi=new ImageView();
 	@FXML
@@ -85,10 +88,12 @@ public class info implements Initializable{
 	  private Button provaaaaaa;
     @FXML 
 	  private Button provaaaaaaa;
-     @FXML
+    @FXML
+    private Label contact=new Label();
+    @FXML
 	  MenuItem logout=new MenuItem("Logout",null);
-     @FXML
-          AnchorPane panee;
+@FXML
+AnchorPane panee;
     ResultSet resultset;
     PreparedStatement preparedStatement;
     Connection connection;
@@ -118,18 +123,18 @@ public class info implements Initializable{
   		connection =getConnection();
 	}
     
-    @Override
-    public void initialize(URL arg0, ResourceBundle arg1) {
-    }
-
+  	 @Override
+  	  public void initialize(URL arg0, ResourceBundle arg1) {
+  	    
+  	  }
     @FXML
 	  private void home(ActionEvent event) throws Exception {
-	Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/sample.fxml"));
+		  Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/sample.fxml"));
 	      Scene scene = new Scene(parenti);
 	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	      primaryStage.setScene(scene);
 	      primaryStage.show();
-	    
+	     
 	  }
     @FXML
     void rezervoButtonAction1(ActionEvent event) {
@@ -158,6 +163,7 @@ public class info implements Initializable{
 			 Alert alert = new Alert(AlertType.INFORMATION);
 		      alert.setContentText("Rekordet tuaja u regjistruan me sukses!");
 		      alert.showAndWait();
+			 
 
 		} catch (SQLException ex) {
 			System.out.println(ex.getMessage());
@@ -179,9 +185,12 @@ public class info implements Initializable{
 			preparedStatement.setString(4, txtDataKthimit2.getValue().toString());
 			
 			preparedStatement.executeUpdate();
-			 Alert alert = new Alert(AlertType.INFORMATION);
-		      alert.setContentText("Rekordet tuaja u regjistruan me sukses!");
-		      alert.showAndWait();
+			
+				 Alert alert = new Alert(AlertType.INFORMATION);
+			      alert.setContentText("Rekordet tuaja u regjistruan me sukses!");
+			      alert.showAndWait();
+				 
+			 
 
 		} catch (SQLException ex) {
 			System.out.println(ex.getMessage());
@@ -320,7 +329,17 @@ public class info implements Initializable{
 	@FXML
 	  private void rezi(ActionEvent event) throws Exception {
 	    
-	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/FXMLDocument.fxml"));
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/pl.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	    
+	  }
+	@FXML
+	  private void q(ActionEvent event) throws Exception {
+	    
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/OnBoard.fxml"));
 	      Scene scene = new Scene(parenti);
 	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 	      primaryStage.setScene(scene);
@@ -338,7 +357,7 @@ public class info implements Initializable{
 		    imgi.getTransforms().add(newScale);
 	    
 	  }
-		  final KeyCombination keyii= new KeyCodeCombination(KeyCode.P);
+	  final KeyCombination keyii= new KeyCodeCombination(KeyCode.P);
 	  @FXML
 	  public void plus(KeyEvent event) throws Exception {
 		  if (keyii.match(event)) {
@@ -381,7 +400,7 @@ public class info implements Initializable{
 		  box.setStyle("-fx-background-color:red");
 	    
 	  }
-	@FXML
+	 @FXML
 	 Label label=new Label();
 	  @FXML
 	  private void text(MouseEvent event) throws Exception {
@@ -391,7 +410,7 @@ public class info implements Initializable{
 		  label.setText(dtf.format(now));
 	    
 	  }
-	   @FXML
+	  @FXML
 	  private void logout(ActionEvent event) throws Exception {
 		  Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/hyrja.fxml"));
 	      Scene scene = new Scene(parenti);
@@ -399,13 +418,16 @@ public class info implements Initializable{
 	      primaryStage.setScene(scene);
 	      primaryStage.show();
 	  }
+	  
 	@FXML
 	private void help(ActionEvent event) throws Exception {
-              Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/help.fxml"));
+		
+		 
+		  Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/help.fxml"));
 	      Scene scene = new Scene(parenti);
 	      Stage primaryStage = new Stage(); 
 	      primaryStage.setScene(scene);
-	      primaryStage.show();
+	      primaryStage.show();		     
 	  }
 	
 	final KeyCombination key = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_ANY);
@@ -422,7 +444,8 @@ public class info implements Initializable{
       
 		    }  
 		  }
-	 @FXML
+	  
+	  @FXML
 	  public void set(ActionEvent event) {
 		  
 		  prova.setText("Sllajdi");
@@ -432,7 +455,7 @@ public class info implements Initializable{
 		  provaaaaa.setText("Ankesat");
 		  provaaaaaa.setText("Lokacioni");
 		  provaaaaaaa.setText("Faqja kryesore");
-		  
+		
 		  
 	  }
 	  @FXML
@@ -444,7 +467,9 @@ public class info implements Initializable{
 		  provaaaaa.setText("Complaints Handling");
 		  provaaaaaa.setText("Location");
 		  provaaaaaaa.setText("Home");
-		
 		  
 	  }
-}
+ }
+ 
+	 
+
