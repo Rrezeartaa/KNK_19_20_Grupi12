@@ -112,7 +112,7 @@
                <content>
                   <Pane>
                      <children>
-                        <ImageView id="img" fx:id="img" fitHeight="700.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView id="img" fx:id="imgi" fitHeight="700.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@/application/stilet/photos/air_location.png" />
                            </image>
