@@ -5,51 +5,45 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.info">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.info">
    <left>
       <VBox prefHeight="585.0" prefWidth="173.0" style="-fx-background-color: #E0E0E0;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="shqip" mnemonicParsing="false" onAction="#set" prefHeight="25.0" prefWidth="188.0" style="-fx-background-color: #F0FFFF; -fx-border-color: #4682B4;" text="Shqip">
+            <Button fx:id="shqip" mnemonicParsing="false" onAction="#set" prefHeight="26.0" prefWidth="59.0" text="Shqip" />
+            <Button fx:id="anglisht" mnemonicParsing="false" onAction="#seti" text="Anglisht" />
+            <Button fx:id="prova" mnemonicParsing="false" onAction="#imggg" prefHeight="40.0" prefWidth="166.0" style="-fx-background-color: #00bfff; -fx-text-fill: #573bb8;" text="SlideShow">
                <VBox.margin>
-                  <Insets left="20.0" right="20.0" top="5.0" />
-               </VBox.margin></Button>
-            <Button fx:id="anglisht" mnemonicParsing="false" onAction="#seti" prefHeight="25.0" prefWidth="205.0" style="-fx-background-color: #F0FFFF; -fx-border-color: #4682B4;" text="Anglisht">
-               <VBox.margin>
-                  <Insets left="20.0" right="20.0" top="5.0" />
-               </VBox.margin></Button>
-            <Button fx:id="prova" mnemonicParsing="false" onAction="#imggg" prefHeight="40.0" prefWidth="166.0" style="-fx-background-color: #00BFFF; -fx-text-fill: #573bb8;" text="SlideShow">
-               <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="20.0" />
+                  <Insets bottom="5.0" left="5.0" right="2.0" top="5.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="provaa" mnemonicParsing="false" onAction="#img" prefHeight="40.0" prefWidth="190.0" style="-fx-background-color: #00BFFF; -fx-text-fill: #573bb8;" text="Information Desk">
+            <Button fx:id="provaa" mnemonicParsing="false" onAction="#img" prefHeight="40.0" prefWidth="190.0" style="-fx-background-color: #00bfff; -fx-text-fill: #573bb8;" text="Information Desk">
                <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="30.0" />
+                  <Insets bottom="5.0" left="5.0" right="2.0" top="50.0" />
                </VBox.margin>
             </Button>
             <Button fx:id="provaaa" mnemonicParsing="false" onAction="#s2" prefHeight="40.0" prefWidth="174.0" style="-fx-background-color: #00bfff; -fx-text-fill: #573bb8;" text="Lost and Found">
                <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="30.0" />
+                  <Insets bottom="5.0" left="5.0" right="2.0" top="50.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="provaaaa" mnemonicParsing="false" onAction="#s3" prefHeight="40.0" prefWidth="229.0" style="-fx-background-color: #00BFFF; -fx-text-fill: #573bb8;" text="Public Relations">
+            <Button fx:id="provaaaa" mnemonicParsing="false" onAction="#s3" prefHeight="40.0" prefWidth="229.0" style="-fx-background-color: #00bfff; -fx-text-fill: #573bb8;" text="Public Relations">
                <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="30.0" />
+                  <Insets bottom="5.0" left="5.0" right="2.0" top="50.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="provaaaaa" mnemonicParsing="false" onAction="#s4" prefHeight="40.0" prefWidth="332.0" style="-fx-background-color: #00BFFF; -fx-text-fill: #573bb8;" text="Complaints Handling">
+            <Button fx:id="provaaaaa" mnemonicParsing="false" onAction="#s4" prefHeight="40.0" prefWidth="332.0" style="-fx-background-color: #00bfff; -fx-text-fill: #573bb8;" text="Complaints Handling">
                <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="30.0" />
+                  <Insets bottom="5.0" left="5.0" right="2.0" top="50.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="provaaaaaa" mnemonicParsing="false" onAction="#s5" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #00BFFF; -fx-text-fill: #573bb8;" text="Location">
+            <Button fx:id="provaaaaaa" mnemonicParsing="false" onAction="#s5" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #00bfff; -fx-text-fill: #573bb8;" text="Location">
                <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="30.0" />
+                  <Insets bottom="5.0" left="5.0" right="2.0" top="50.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="provaaaaaaa" mnemonicParsing="false" onAction="#home" prefHeight="40.0" prefWidth="166.0" style="-fx-background-color: #00BFFF; -fx-text-fill: #573bb8;" text="Home">
+            <Button fx:id="provaaaaaaa" mnemonicParsing="false" onAction="#home" prefHeight="40.0" prefWidth="166.0" style="-fx-background-color: #00bfff; -fx-text-fill: #573bb8;" text="Home">
                <VBox.margin>
-                  <Insets bottom="5.0" left="5.0" right="5.0" top="30.0" />
+                  <Insets bottom="5.0" left="5.0" right="2.0" top="10.0" />
                </VBox.margin>
             </Button>
          </children>
@@ -59,4 +53,3 @@
       <VBox id="contentPane" fx:id="contentPane" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>
-
