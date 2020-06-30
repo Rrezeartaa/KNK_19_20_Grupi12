@@ -246,13 +246,26 @@ public class login extends BaseController implements Initializable {
 		    }
 		  }
 
+	 @FXML
+Text ar;
+@FXML
+Text emrii;
+@FXML
+Text passs;
 	  @Override
 	  public void loadLangTexts(ResourceBundle langBundle) {
 	    String rez1 = langBundle.getString("rez1");
 	    String rez2 = langBundle.getString("rez2");
+	    String rez3 = langBundle.getString("rez3");
+	    String rez4 = langBundle.getString("rez4");
+	    String rez5 = langBundle.getString("rez5");
+	   
 	     
 	    loginButton.setText(rez1);
 	    signupButton.setText(rez2);
+	    emrii.setText(rez3);
+	    passs.setText(rez4);
+	    ar.setText(rez5);
 	    
 	    
 	  }
