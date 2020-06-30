@@ -1,5 +1,6 @@
 package application.controllers;
 
+
 import java.io.IOException;
 import java.net.URL;
 import java.security.MessageDigest;
@@ -134,7 +135,7 @@ public class login implements Initializable {
           
             MessageDigest md = MessageDigest.getInstance("SHA-256");
             byte[] digest = md.digest((pass.getText()).getBytes());
-            String encodedHash = new String(digest);
+            String encodedHash =digest.toString();
             preparedStatement = (PreparedStatement) connection.prepareStatement(st);
             preparedStatement.setString(1, emri.getText());
             preparedStatement.setString(2, mbiemri.getText());
@@ -177,22 +178,21 @@ public class login implements Initializable {
      String email = usernameField.getText();
      String password = passwordField.getText();
      
-     if(email.isEmpty() || password.isEmpty()) {
-         System.out.println("Empty credentials");
+     if(email.isEmpty()) {
+         System.out.println("Enter your email!");
          status = "Error";
      } else {
 
-    	 MessageDigest messageDigest = MessageDigest.getInstance("SHA-512");
-        // messageDigest.update(Encoding.UTF8.GetBytes(salt_encoded));
-    	 byte[] digest = messageDigest.digest((pass.getText()).getBytes());
-         String encodedHash = new String(digest);
-         String sql = "SELECT * FROM u_serss Where u_email="+email+"and u_hash="+encodedHash;
+    	 MessageDigest mdi = MessageDigest.getInstance("SHA-256");
+         byte[] digesti = mdi.digest((passwordField.getText()).getBytes());
+         String encodedHashi =digesti.toString();
+         String sql = "SELECT * FROM u_serss Where u_email=?";
          
          try {
         	        	 
              preparedStatement = connection.prepareStatement(sql);
              preparedStatement.setString(1, email);
-             preparedStatement.setString(2, encodedHash);
+            // preparedStatement.setString(2, encodedHashi);
              resultset = preparedStatement.executeQuery();
              
              if (!resultset.next()) {
