@@ -79,6 +79,18 @@
    
    
    
+   <center>
+      <VBox id="contentPane" fx:id="contentPane" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button onAction="#set" fx:id="shqip" mnemonicParsing="false" prefHeight="26.0" prefWidth="59.0" text="Shqip" />
+            <Button onAction="#seti" fx:id="anglisht" mnemonicParsing="false" text="Anglisht" />
+         </children></VBox>
+   </center>
+</BorderPane>
+   
+   
+   
+   
    
    
    
