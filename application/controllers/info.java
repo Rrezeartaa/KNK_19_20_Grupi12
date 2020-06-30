@@ -324,8 +324,8 @@ public class info implements Initializable{
 	  private void s7(ActionEvent event) throws Exception {
 	    
 		  Scale newScale = new Scale();
-		    newScale.setX(imgi.getScaleX() - 2);
-		    newScale.setY(imgi.getScaleY() - 2);
+		    newScale.setX(imgi.getScaleX() - 0.5);
+		    newScale.setY(imgi.getScaleY() - 0.5);
 		    newScale.setPivotX(imgi.getScaleX());
 		    newScale.setPivotY(imgi.getScaleY());
 		    imgi.getTransforms().add(newScale);
