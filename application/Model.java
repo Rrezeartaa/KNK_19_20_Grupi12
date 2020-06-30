@@ -1,6 +1,6 @@
 package application;
 
-import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
+//import com.jfoenix.controls.datamodels.treetable.RecursiveTreeObject;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
@@ -9,11 +9,11 @@ public class Model extends RecursiveTreeObject<Model> {
 
 	StringProperty emri, mbiemri, datelindja, email;
 
-	public Model(String emri, String mbiemri, String datelindja, String email) {
+	public Model(String emri, String mbiemri,  String email) {
 
 		this.emri = new SimpleStringProperty(emri);
 		this.mbiemri = new SimpleStringProperty(mbiemri);
-		this.datelindja = new SimpleStringProperty(datelindja);
+		//this.datelindja = new SimpleStringProperty(datelindja);
 		this.email = new SimpleStringProperty(email);
 	}
 
