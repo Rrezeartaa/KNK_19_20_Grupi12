@@ -61,13 +61,13 @@
                </rowConstraints>
                <children>
 
-                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#rez" prefHeight="145.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="Setting" textFill="#573bb8" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#rez" prefHeight="145.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="User" textFill="#573bb8" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin></Button>
-                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#rezi" prefHeight="153.0" prefWidth="273.0" stylesheets="@../stilet/stili.css" text="Menu" textFill="#573bb8" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#rezi" prefHeight="153.0" prefWidth="273.0" stylesheets="@../stilet/stili.css" text="Reservation" textFill="#573bb8" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
                   <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#img1" prefHeight="151.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="Information" textFill="#573bb8" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
-                  <Button maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="144.0" prefWidth="284.0" stylesheets="@../stilet/stili.css" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                  <Button maxHeight="-Infinity" maxWidth="-Infinity" alignment="BOTTOM_CENTER" mnemonicParsing="false" prefHeight="144.0" prefWidth="284.0" stylesheets="@../stilet/stili.css" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
                   <ImageView fitHeight="90.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <image>
                         <Image url="@/application/stilet/photos/home.png" />
