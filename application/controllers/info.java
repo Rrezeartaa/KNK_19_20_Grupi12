@@ -1,13 +1,17 @@
 package application.controllers;
 
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ResourceBundle;
-
+import javafx.event.EventHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,15 +20,19 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.transform.Scale;
 import javafx.stage.Stage;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
-
+import javafx.scene.control.Alert.AlertType;
 import javafx.geometry.Pos;
 
 public class info implements Initializable{	
@@ -59,6 +67,9 @@ public class info implements Initializable{
 
     @FXML
     private Button btnRezervo2;
+    
+    @FXML 
+	  private Button button;
     
     ResultSet resultset;
     PreparedStatement preparedStatement;
@@ -324,6 +335,16 @@ public class info implements Initializable{
 	  private void s8(ActionEvent event) throws Exception {
 	    
 		  box.setStyle("-fx-background-color:red");
+	    
+	  }
+	@FXML
+	 Label label=new Label();
+	  @FXML
+	  private void text(MouseEvent event) throws Exception {
+		  DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+		   LocalDateTime now = LocalDateTime.now();  
+		  
+		  label.setText(dtf.format(now));
 	    
 	  }
 	 
