@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.info">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.info">
    <children>
       <Pane layoutX="-6.0" layoutY="-6.0" prefHeight="162.0" prefWidth="894.0" style="-fx-background-color: #00bfff;" AnchorPane.bottomAnchor="429.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-6.0">
          <children>
@@ -26,6 +26,25 @@
                   <Image url="@/application/stilet/photos/prishtina_logo.png" />
                </image>
             </ImageView>
+            <MenuBar layoutY="2.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
          </children></Pane>
       <AnchorPane layoutX="14.0" layoutY="161.0" prefHeight="403.0" prefWidth="807.0" style="-fx-background-color: #F0F0F0;" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="161.0">
          <children>
@@ -83,5 +102,22 @@
             </GridPane>
          </children>
       </AnchorPane>
+      <HBox layoutX="-7.0" layoutY="561.0" prefHeight="24.0" prefWidth="887.0" style="-fx-background-color: #d9dedb;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label text="Mire se erdhet!">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="3.0" />
+               </padding>
+            </Label>
+            <Label fx:id="label" onMouseEntered="#text" text="Status">
+               <HBox.margin>
+                  <Insets left="200.0" top="3.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>
