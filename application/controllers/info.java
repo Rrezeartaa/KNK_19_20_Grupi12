@@ -1,4 +1,5 @@
 package application.controllers;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -24,6 +25,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.transform.Scale;
+import javafx.stage.Popup;
 import javafx.stage.Stage;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -358,5 +360,12 @@ public class info implements Initializable{
 	      primaryStage.setScene(scene);
 	      primaryStage.show();
 	  }
-	
+	@FXML
+	private void help(ActionEvent event) throws Exception {
+              Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/help.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = new Stage(); 
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	  }
 }
