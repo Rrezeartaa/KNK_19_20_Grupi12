@@ -48,7 +48,7 @@
                            <graphic>
                               <ImageView fitHeight="29.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@add.png" />
+                                    <Image url="@/application/stilet/photos/add.png" />
                                  </image>
                               </ImageView>
                            </graphic>
