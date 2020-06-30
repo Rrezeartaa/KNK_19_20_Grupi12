@@ -18,9 +18,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox fx:id="box" id="box" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.info">
+<VBox onKeyPressed="#plus" id="box" fx:id="box" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.info">
    <children>
-      <HBox alignment="CENTER" spacing="7.0">
+      <HBox alignment="CENTER" spacing="7.0" onKeyPressed="#minus">
          <children>
            <Button mnemonicParsing="false" onAction="#s6" style="-fx-background-color: white; -fx-border-color: #00bfff; -fx-background-color:#E0FFFF ;" text="Zoom In" />
             <Button mnemonicParsing="false" onAction="#s7" style="-fx-background-color: white; -fx-border-color: #00bfff; -fx-background-color:#E0FFFF ;" text="Zoom Out" />
