@@ -72,6 +72,20 @@ public class info implements Initializable{
     
     @FXML 
 	  private Button button;
+    @FXML 
+	  private Button prova;
+    @FXML 
+	  private Button provaa;
+    @FXML 
+	  private Button provaaa;
+    @FXML 
+	  private Button provaaaa;
+    @FXML 
+	  private Button provaaaaa;
+    @FXML 
+	  private Button provaaaaaa;
+    @FXML 
+	  private Button provaaaaaaa;
      @FXML
 	  MenuItem logout=new MenuItem("Logout",null);
      @FXML
@@ -367,5 +381,45 @@ public class info implements Initializable{
 	      Stage primaryStage = new Stage(); 
 	      primaryStage.setScene(scene);
 	      primaryStage.show();
+	  }
+	
+	final KeyCombination key = new KeyCodeCombination(KeyCode.O, KeyCombination.CONTROL_ANY);
+	  @FXML
+	  public void out(KeyEvent event) throws Exception {
+		  if (key.match(event)) {
+
+	                  Node node = (Node) event.getSource();
+	                  Stage stage = (Stage) node.getScene().getWindow();
+	                  stage.close();
+	                  Scene scene = new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("application/views/hyrja.fxml")));
+	                  stage.setScene(scene);
+	                  stage.show();
+      
+		    }  
+		  }
+	 @FXML
+	  public void set(ActionEvent event) {
+		  
+		  prova.setText("Sllajdi");
+		  provaa.setText("Informacionet");
+		  provaaa.setText("Sllajdi");
+		  provaaaa.setText("Relacionet publike");
+		  provaaaaa.setText("Ankesat");
+		  provaaaaaa.setText("Lokacioni");
+		  provaaaaaaa.setText("Faqja kryesore");
+		  
+		  
+	  }
+	  @FXML
+	  public void seti(ActionEvent event) {
+		  prova.setText("SlideShow");
+		  provaa.setText("Information Desk");
+		  provaaa.setText("Lost and Found");
+		  provaaaa.setText("Public Relations");
+		  provaaaaa.setText("Complaints Handling");
+		  provaaaaaa.setText("Location");
+		  provaaaaaaa.setText("Home");
+		
+		  
 	  }
 }
