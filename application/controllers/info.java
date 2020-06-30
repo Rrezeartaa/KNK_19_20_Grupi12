@@ -1,6 +1,4 @@
 package application.controllers;
-
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -22,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.scene.transform.Scale;
@@ -30,6 +29,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
@@ -70,7 +70,10 @@ public class info implements Initializable{
     
     @FXML 
 	  private Button button;
-    
+     @FXML
+	  MenuItem logout=new MenuItem("Logout",null);
+     @FXML
+          AnchorPane panee;
     ResultSet resultset;
     PreparedStatement preparedStatement;
     Connection connection;
@@ -347,5 +350,13 @@ public class info implements Initializable{
 		  label.setText(dtf.format(now));
 	    
 	  }
-	 
+	   @FXML
+	  private void logout(ActionEvent event) throws Exception {
+		  Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/hyrja.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage)panee.getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	  }
+	
 }
