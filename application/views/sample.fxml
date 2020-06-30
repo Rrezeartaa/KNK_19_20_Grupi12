@@ -16,7 +16,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="panee" onKeyPressed="#out" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="585.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.info">
+<AnchorPane fx:id="panee" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#out" prefHeight="585.0" prefWidth="887.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.info">
    <children>
       <Pane layoutX="-6.0" layoutY="-6.0" prefHeight="162.0" prefWidth="894.0" style="-fx-background-color: #00bfff;" AnchorPane.bottomAnchor="429.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-6.0">
          <children>
@@ -25,30 +25,30 @@
                   <Font name="Freestyle Script" size="24.0" />
                </font>
             </Label>
-            <ImageView fitHeight="145.0" fitWidth="290.0" layoutX="24.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="128.0" fitWidth="273.0" layoutX="24.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@/application/stilet/photos/prishtina_logo.png" />
+                  <Image url="@prishtina_logo.png" />
                </image>
             </ImageView>
-            <MenuBar layoutY="2.0" prefHeight="26.0" prefWidth="900.0">
-              <menus>
-                <Menu fx:id="logout" mnemonicParsing="false" onAction="#logout" text="File">
-                  <items>
-                
-                    <MenuItem mnemonicParsing="false" text="Logout" />
-                    
-                  </items>
-                </Menu>
-                
-                <Menu mnemonicParsing="false" onAction="#help" text="Help">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-              </menus>
+            <MenuBar layoutY="2.0" prefHeight="26.0" prefWidth="894.0">
+               <menus>
+                  <Menu fx:id="logout" mnemonicParsing="false" onAction="#logout" text="File">
+                     <items>
+
+                        <MenuItem mnemonicParsing="false" text="Logout" />
+
+                     </items>
+                  </Menu>
+
+                  <Menu mnemonicParsing="false" onAction="#help" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="About" />
+                     </items>
+                  </Menu>
+               </menus>
             </MenuBar>
          </children></Pane>
-      <AnchorPane layoutX="14.0" layoutY="161.0" prefHeight="403.0" prefWidth="807.0" style="-fx-background-color: #F0F0F0;" AnchorPane.bottomAnchor="21.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="161.0">
+      <AnchorPane layoutX="43.0" layoutY="172.0" prefHeight="382.0" prefWidth="797.0" style="-fx-background-color: #F0F0F0;" AnchorPane.bottomAnchor="31.0" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="47.0" AnchorPane.topAnchor="172.0">
          <children>
             <GridPane layoutX="115.0" layoutY="65.0" prefHeight="263.0" prefWidth="597.0" AnchorPane.bottomAnchor="47.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="147.0" AnchorPane.topAnchor="65.0">
                <columnConstraints>
@@ -61,43 +61,43 @@
                </rowConstraints>
                <children>
 
-                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#rez" prefHeight="145.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="Setting" textFill="#573bb8" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#rez" prefHeight="145.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="Reservation" textFill="#573bb8" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <GridPane.margin>
                         <Insets />
                      </GridPane.margin></Button>
-                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#rezi" prefHeight="153.0" prefWidth="273.0" stylesheets="@../stilet/stili.css" text="Menu" textFill="#573bb8" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
-                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#img1" prefHeight="151.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="Information" textFill="#573bb8" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
-                  <Button onAction="#q" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="144.0" prefWidth="284.0" stylesheets="@../stilet/stili.css" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
+                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#rezi" prefHeight="153.0" prefWidth="273.0" stylesheets="@../stilet/stili.css" text="Flights" textFill="#573bb8" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                  <Button id="button" alignment="BOTTOM_CENTER" contentDisplay="TOP" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#img1" prefHeight="151.0" prefWidth="270.0" stylesheets="@../stilet/stili.css" text="   Information" textFill="#573bb8" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS" />
+                  <Button alignment="BOTTOM_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#q" prefHeight="144.0" prefWidth="284.0" stylesheets="@../stilet/stili.css" text="User" textFill="#573bb8" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" />
                   <ImageView fitHeight="90.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <image>
-                        <Image url="@/application/stilet/photos/home.png" />
+                        <Image url="@user_ic.png" />
                      </image>
                      <GridPane.margin>
-                        <Insets left="100.0" />
+                        <Insets left="90.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="75.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
+                  <ImageView fitHeight="90.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS">
                      <image>
-                        <Image url="@/application/stilet/photos/proces.png" />
+                        <Image url="@reservation_icon.png" />
                      </image>
                      <GridPane.margin>
-                        <Insets left="370.0" />
+                        <Insets left="360.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="79.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                  <ImageView fitHeight="90.0" fitWidth="95.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                      <image>
-                        <Image url="@/application/stilet/photos/setting.png" />
+                        <Image url="@airplane_icon.png" />
                      </image>
                      <GridPane.margin>
-                        <Insets left="100.0" />
+                        <Insets left="90.0" />
                      </GridPane.margin>
                   </ImageView>
-                  <ImageView fitHeight="82.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+                  <ImageView fitHeight="95.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
                      <image>
-                        <Image url="@/application/stilet/photos/staff_info.png" />
+                        <Image url="@staff_info.png" />
                      </image>
                      <GridPane.margin>
-                        <Insets left="370.0" />
+                        <Insets left="360.0" />
                      </GridPane.margin>
                   </ImageView>
                </children>
@@ -123,4 +123,5 @@
       </HBox>
    </children>
 </AnchorPane>
+
 
