@@ -1,17 +1,17 @@
 package application.controllers;
 
-
-import java.io.IOException;
 import java.net.URL;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
+import java.util.ResourceBundle;
+import application.controllers.LangEnum;
+import application.controllers.AppLanguage;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 import application.loginman;
 import javafx.event.ActionEvent;
@@ -23,6 +23,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -35,7 +36,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 //import application.databaza.DbConnection;
 
-public class login implements Initializable {
+public class login extends BaseController implements Initializable {
   @FXML
   private TextField usernameField;
   @FXML
@@ -91,10 +92,6 @@ public class login implements Initializable {
   }
   
 
-  @Override
-  public void initialize(URL arg0, ResourceBundle arg1) {
-//    application= new loginman();
-  }
 
   @FXML
   private void loginButtonClick(ActionEvent event) throws Exception {
@@ -210,7 +207,55 @@ public class login implements Initializable {
      
      return status;
  }
- 
+ @FXML
+ private CheckMenuItem enCheckMenuItem;
+ @FXML
+ private CheckMenuItem alCheckMenuItem;
+	 @Override
+	  public void initialize(URL arg0, ResourceBundle arg1) {
+		super.initialize(arg0, arg1);
+	    boolean enSelected = AppLanguage.get().getLanguage() == LangEnum.EN;
+	  enCheckMenuItem.setSelected(enSelected);
+	alCheckMenuItem.setSelected(!enSelected);
+	    
+	  }
+	 @FXML
+	  private void onChangeLangMenuItemEnClick(ActionEvent event) {
+	    enCheckMenuItem.setSelected(true);
+	    alCheckMenuItem.setSelected(false);
+	    changeUILanguage();
+	  }
+	 private BaseController childController;
+	 
+	  @FXML
+	  private void onChangeLangMenuItemAlClick(ActionEvent event) {
+	    enCheckMenuItem.setSelected(false);
+	    alCheckMenuItem.setSelected(true);
+	    changeUILanguage();
+	  }
+	  private void changeUILanguage() {
+		    try {
+		      LangEnum lang = enCheckMenuItem.isSelected() ? LangEnum.EN : LangEnum.AL;
+		      AppLanguage.get().setLanguage(lang);
+		      
+		      ResourceBundle langBundle = getLangBundle();
+		      loadLangTexts(langBundle);
+		      childController.loadLangTexts(langBundle);
+		    } catch (Exception e) {
+		      System.out.println(e.getMessage());
+		    }
+		  }
+
+	  @Override
+	  public void loadLangTexts(ResourceBundle langBundle) {
+	    String rez1 = langBundle.getString("rez1");
+	    String rez2 = langBundle.getString("rez2");
+	     
+	    loginButton.setText(rez1);
+	    signupButton.setText(rez2);
+	    
+	    
+	  }
   final KeyCombination key= new KeyCodeCombination(KeyCode.ENTER);
   @FXML
   public void onScreenKeyPressed(KeyEvent event) throws Exception {
@@ -233,4 +278,4 @@ public class login implements Initializable {
 	    }  
 	  }
 }
-  }
+  } 
