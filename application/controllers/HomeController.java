@@ -145,6 +145,60 @@ public class HomeController implements Initializable{
             System.out.println(ex.getMessage());
         }
     }
-    
+	@FXML
+    private void update() throws NoSuchAlgorithmException {
+
+        try {
+       	 
+            String st = "UPDATE u_serss\r\n" + 
+            		"SET u_email = ? WHERE u_emri=? and u_mbiemri=?";
+          
+            
+            preparedStatement = (PreparedStatement) connection.prepareStatement(st);
+            preparedStatement.setString(2, txtEmri.getText());
+            preparedStatement.setString(3, txtMbiemri.getText());
+           // preparedStatement.setString(3, fieldDob.getValue().toString());
+            preparedStatement.setString(1, txtEmail.getText());   
+            preparedStatement.executeUpdate();
+	    
+	    System.out.println("Te dhenat u update me sukses");
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    @FXML
+    private void delete() throws NoSuchAlgorithmException {
+
+        try {
+       	 
+            String st = "Delete from u_serss where u_emri=? and u_mbiemri=? and u_email=?";
+          
+            
+            preparedStatement = (PreparedStatement) connection.prepareStatement(st);
+            preparedStatement.setString(1, txtEmri.getText());
+            preparedStatement.setString(2, txtMbiemri.getText());
+           // preparedStatement.setString(3, fieldDob.getValue().toString());
+            preparedStatement.setString(3, txtEmail.getText());   
+            preparedStatement.executeUpdate();
+	    
+	    System.out.println("Te dhenat u fshine me sukses");
+
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+    }
+    @FXML
+	  private void back(ActionEvent event) throws Exception {
+	    
+	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/sample.fxml"));
+	      Scene scene = new Scene(parenti);
+	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+	      primaryStage.setScene(scene);
+	      primaryStage.show();
+	    
+	  }
 }
+    
+
 
