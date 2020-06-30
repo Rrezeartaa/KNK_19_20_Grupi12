@@ -1,4 +1,4 @@
-package controllers;
+package application.controllers;
 
 import java.net.URL;
 import java.security.MessageDigest;
@@ -35,7 +35,7 @@ public class HomeController implements Initializable{
     private TableColumn<Model, String> mbiemriCol;
     
     @FXML
-    private TableColumn<?, ?> datelindjacol;
+    private TableColumn<Model, String> datelindjacol;
 
     @FXML
     private DatePicker fieldDob;
@@ -102,13 +102,10 @@ public class HomeController implements Initializable{
     	try {
 			list = FXCollections.observableArrayList();
 			
-			ResultSet rs = connection.createStatement().executeQuery("SELECT * FROM u_serss");
+			ResultSet rs = connection.createStatement().executeQuery("SELECT u_emri,u_mbiemri,datelindja,u_email FROM u_serss");
 			while(rs.next()) {
 				list.add(new Model(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4)));
-				System.out.println("Emri:" + rs.getString(1));
-				System.out.println("Mbiemri" + rs.getString(2));
-				System.out.println("Datelindja:" + rs.getString(3));
-				System.out.println("Email:" + rs.getString(4));
+				
 			}
 			
 			
@@ -138,10 +135,11 @@ public class HomeController implements Initializable{
             preparedStatement = (PreparedStatement) connection.prepareStatement(st);
             preparedStatement.setString(1, txtEmri.getText());
             preparedStatement.setString(2, txtMbiemri.getText());
-           // preparedStatement.setString(3, dob.getValue().toString());
             preparedStatement.setString(3, fieldDob.getValue().toString());
             preparedStatement.setString(4, txtEmail.getText());   
             preparedStatement.executeUpdate();
+	    
+	    System.out.println("Te dhenat u insertuan me sukses");
 
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
