@@ -215,13 +215,22 @@ public class login implements Initializable {
   @FXML
   public void onScreenKeyPressed(KeyEvent event) throws Exception {
 	  if (key.match(event)) {
-	      
-	      Parent parenti = FXMLLoader.load(getClass().getClassLoader().getResource("application/views/sample.fxml"));
-	      Scene scene = new Scene(parenti);
-	      Stage primaryStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-	      primaryStage.setScene(scene);
-	      primaryStage.show();
+	
+          if (logIn().equals("Success")) {
+              try {
+
+                  Node node = (Node) event.getSource();
+                  Stage stage = (Stage) node.getScene().getWindow();
+                  stage.close();
+                  Scene scene = new Scene(FXMLLoader.load(getClass().getClassLoader().getResource("application/views/sample.fxml")));
+                  stage.setScene(scene);
+                  stage.show();
+
+              } catch (IOException ex) {
+                  System.err.println(ex.getMessage());
+              }
 	      
 	    }  
-  }
+	  }
 }
+  }
